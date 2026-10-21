@@ -1,0 +1,33 @@
+// ============================================================================
+// ENTERPRISE POWER BI ANALYTICS PORTFOLIO — CALCULATED COLUMNS
+// Author: Datta Sable (https://dattasable.com)
+// Description: Recommended calculated columns for dimensional grouping and segmentation.
+// Note: Wherever possible, favor Power Query M-transformations or star-schema dimensions
+// for optimal Tabular engine compression and refresh performance.
+// ============================================================================
+
+// Table: fact_orders_2023
+// Definition: Prefer DimDate fields in visuals
+fact_orders_2023[Order Month] = 
+DATE ( YEAR ( fact_orders_2023[Order_Date] ), MONTH ( fact_orders_2023[Order_Date] ), 1 )
+
+// Table: fact_orders_2023
+// Definition: Inspect raw values first; replace Yes if boolean/1/0
+fact_orders_2023[Delivery Status] = 
+IF ( fact_orders_2023[On_Time_Delivery] = "Yes", "On Time", "Late" )
+
+// Table: fact_orders_2023
+// Definition: Bands for order-value analysis
+fact_orders_2023[Order Size Band] = 
+SWITCH ( TRUE (), fact_orders_2023[Sales_Amount_USD] < 50, "Under $50", fact_orders_2023[Sales_Amount_USD] < 150, "$50–149", fact_orders_2023[Sales_Amount_USD] < 500, "$150–499", "$500+" )
+
+// Table: dim_products
+// Definition: Product segmentation
+dim_products[Price Band] = 
+SWITCH ( TRUE (), dim_products[List_Price_USD] < 50, "Budget", dim_products[List_Price_USD] < 250, "Mid-range", "Premium" )
+
+// Table: fact_orders_2023
+// Definition: Optional; prefer calendar
+fact_orders_2023[Order Year] = 
+YEAR ( fact_orders_2023[Order_Date] )
+

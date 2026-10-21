@@ -1,0 +1,142 @@
+// ============================================================================
+// ENTERPRISE POWER BI ANALYTICS PORTFOLIO — DAX MEASURE LIBRARY
+// Section: 06 Orders
+// Author: Datta Sable (https://dattasable.com)
+// Source: Datta_Sable_PowerBI_DAX_Visuals_Implementation_Handbook.xlsx
+// ============================================================================
+
+// ============================================================================
+// Measure Name: Delivered Orders
+// Purpose: Calculate delivered orders for Orders analytics.
+// Business Definition: Status at extract; not necessarily returned orders
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: fact_orders_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Delivered Orders = 
+CALCULATE ( [Total Orders], fact_orders_2023[Order_Status] = "Delivered" )
+
+// ============================================================================
+// Measure Name: Shipped Orders
+// Purpose: Calculate shipped orders for Orders analytics.
+// Business Definition: Check status values
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: fact_orders_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Shipped Orders = 
+CALCULATE ( [Total Orders], fact_orders_2023[Order_Status] = "Shipped" )
+
+// ============================================================================
+// Measure Name: Cancelled Orders
+// Purpose: Calculate cancelled orders for Orders analytics.
+// Business Definition: Check status values
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: fact_orders_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Cancelled Orders = 
+CALCULATE ( [Total Orders], fact_orders_2023[Order_Status] = "Cancelled" )
+
+// ============================================================================
+// Measure Name: Delivery Fulfillment %
+// Purpose: Calculate delivery fulfillment % for Orders analytics.
+// Business Definition: Delivered / all orders; define business meaning
+// Expected Data Type: Percentage
+// Formatting: 0.0%
+// Required Tables: fact_orders_2023 / Dependent Measures
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Delivery Fulfillment % = 
+DIVIDE ( [Delivered Orders], [Total Orders] )
+
+// ============================================================================
+// Measure Name: Average Delivery Days
+// Purpose: Calculate average delivery days for Orders analytics.
+// Business Definition: May include undelivered rows; filter as needed
+// Expected Data Type: Decimal Number
+// Formatting: 0.0
+// Required Tables: fact_orders_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Average Delivery Days = 
+AVERAGE ( fact_orders_2023[Delivery_Days] )
+
+// ============================================================================
+// Measure Name: On-Time Orders
+// Purpose: Calculate on-time orders for Orders analytics.
+// Business Definition: Adjust to actual CSV encoding
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: fact_orders_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+On-Time Orders = 
+CALCULATE ( [Total Orders], fact_orders_2023[On_Time_Delivery] = "Yes" )
+
+// ============================================================================
+// Measure Name: On-Time Delivery %
+// Purpose: Calculate on-time delivery % for Orders analytics.
+// Business Definition: Use delivered denominator; validate eligibility
+// Expected Data Type: Percentage
+// Formatting: 0.0%
+// Required Tables: fact_orders_2023 / Dependent Measures
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+On-Time Delivery % = 
+DIVIDE ( [On-Time Orders], [Delivered Orders] )
+
+// ============================================================================
+// Measure Name: Orders PY
+// Purpose: Calculate orders py for Orders analytics.
+// Business Definition: Requires 2022
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: DimDate
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Orders PY = 
+CALCULATE ( [Total Orders], SAMEPERIODLASTYEAR ( DimDate[Date] ) )
+
+// ============================================================================
+// Measure Name: Orders YoY %
+// Purpose: Calculate orders yoy % for Orders analytics.
+// Business Definition: Blank for missing PY
+// Expected Data Type: Percentage
+// Formatting: 0.0%
+// Required Tables: fact_orders_2023 / Dependent Measures
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Orders YoY % = 
+DIVIDE ( [Total Orders] - [Orders PY], [Orders PY] )
+

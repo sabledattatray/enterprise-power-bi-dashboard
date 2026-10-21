@@ -1,0 +1,101 @@
+Order_ID,Order_Date,Customer_ID,Product_ID,Country,State_Province,Region,Sales_Channel,Shipping_Method,Order_Status,Quantity,Sales_Amount_USD,Cost_Amount_USD,Profit_Amount_USD,Profit_Margin_Pct,Unit_Price_USD,Delivery_Days,On_Time_Delivery,Delivery_Date
+ORD0000001,2023-07-09,C023885,P0249,United Kingdom,Manchester,Europe,Online Store,Standard Shipping,Delivered,1,92.58,75.16,17.42,18.816,92.58,1.0,Yes,2023-07-10
+ORD0000002,2023-09-19,C037060,P0183,United States,New York,North America,Corporate,Standard Shipping,Delivered,1,25.94,21.39,4.55,17.54,25.94,3.0,No,2023-09-22
+ORD0000003,2023-09-23,C007841,P0315,Spain,Madrid,Europe,Online Store,Standard Shipping,Delivered,2,106.54,86.49,20.05,18.819,53.27,4.0,Yes,2023-09-27
+ORD0000004,2023-08-12,C044762,P0279,Mexico,Mexico City,North America,Online Store,Standard Shipping,Returned,3,61.32,50.56,10.76,17.547,20.44,3.0,Yes,2023-08-15
+ORD0000005,2023-04-15,C021283,P0022,Canada,Ontario,North America,Online Store,Express Shipping,Delivered,1,56.89,46.91,9.98,17.543,56.89,3.0,Yes,2023-04-18
+ORD0000006,2023-12-26,C000760,P0158,Spain,Madrid,Europe,Corporate,International,Delivered,1,47.3,38.4,8.9,18.816,47.3,5.0,Yes,2023-12-31
+ORD0000007,2023-01-20,C011207,P0034,Spain,Madrid,Europe,Retail Store,Standard Shipping,Delivered,1,26.62,21.61,5.01,18.82,26.62,4.0,No,2023-01-24
+ORD0000008,2023-11-21,C018971,P0104,India,Karnataka,Asia,Others,Standard Shipping,Delivered,1,10.73,8.87,1.86,17.335,10.73,7.0,Yes,2023-11-28
+ORD0000009,2023-02-02,C036929,P0273,Canada,British Columbia,North America,Online Store,Express Shipping,Delivered,1,26.48,21.84,4.64,17.523,26.48,6.0,Yes,2023-02-08
+ORD0000010,2023-08-21,C039023,P0253,United States,California,North America,Corporate,Standard Shipping,Delivered,1,23.98,19.77,4.21,17.556,23.98,3.0,Yes,2023-08-24
+ORD0000011,2023-01-08,C016716,P0060,Canada,Ontario,North America,Online Store,Express Shipping,Delivered,3,158.71,130.87,27.84,17.541,52.9033,6.0,Yes,2023-01-14
+ORD0000012,2023-09-22,C037944,P0096,United States,New York,North America,Corporate,Standard Shipping,Delivered,1,67.97,56.05,11.92,17.537,67.97,6.0,Yes,2023-09-28
+ORD0000013,2023-10-20,C018983,P0018,Germany,Bavaria,Europe,Retail Store,Standard Shipping,Delivered,1,30.23,24.54,5.69,18.822,30.23,3.0,Yes,2023-10-23
+ORD0000014,2023-02-04,C045915,P0221,United Kingdom,London,Europe,Corporate,Standard Shipping,Delivered,2,20.32,16.5,3.82,18.799,10.16,4.0,Yes,2023-02-08
+ORD0000015,2023-08-18,C025342,P0148,France,Ile-de-France,Europe,Online Store,Standard Shipping,Delivered,1,4.22,3.43,0.79,18.72,4.22,5.0,Yes,2023-08-23
+ORD0000016,2023-07-30,C030718,P0186,Mexico,Mexico City,North America,Marketplace,Express Shipping,Delivered,1,31.34,25.84,5.5,17.549,31.34,2.0,No,2023-08-01
+ORD0000017,2023-11-16,C010998,P0280,United States,New York,North America,Corporate,Standard Shipping,Delivered,3,24.87,20.51,4.36,17.531,8.29,1.0,Yes,2023-11-17
+ORD0000018,2023-04-05,C029220,P0166,Spain,Madrid,Europe,Online Store,Same Day,Delivered,1,35.14,28.53,6.61,18.81,35.14,3.0,Yes,2023-04-08
+ORD0000019,2023-07-26,C011302,P0131,Spain,Madrid,Europe,Retail Store,Standard Shipping,Delivered,1,77.04,62.54,14.5,18.821,77.04,5.0,No,2023-07-31
+ORD0000020,2023-11-07,C011983,P0004,Mexico,Mexico City,North America,Marketplace,Express Shipping,Delivered,3,196.53,162.06,34.47,17.539,65.51,3.0,Yes,2023-11-10
+ORD0000021,2023-03-21,C005660,P0281,Germany,Berlin,Europe,Online Store,Standard Shipping,Delivered,1,44.52,36.14,8.38,18.823,44.52,3.0,Yes,2023-03-24
+ORD0000022,2023-05-03,C025920,P0007,France,Ile-de-France,Europe,Online Store,Same Day,Delivered,2,55.34,44.93,10.41,18.811,27.67,3.0,Yes,2023-05-06
+ORD0000023,2023-12-25,C039991,P0129,United States,California,North America,Direct Sales,Express Shipping,Delivered,1,53.25,43.91,9.34,17.54,53.25,5.0,Yes,2023-12-30
+ORD0000024,2023-08-23,C029574,P0009,Japan,Tokyo,Asia,Retail Store,Standard Shipping,Delivered,2,22.37,18.49,3.88,17.345,11.185,3.0,Yes,2023-08-26
+ORD0000025,2023-10-11,C008231,P0106,Germany,Berlin,Europe,Online Store,International,Delivered,2,44.19,35.87,8.32,18.828,22.095,4.0,Yes,2023-10-15
+ORD0000026,2023-02-28,C036059,P0239,United Kingdom,London,Europe,Retail Store,Express Shipping,Delivered,2,81.34,66.03,15.31,18.822,40.67,3.0,Yes,2023-03-03
+ORD0000027,2023-09-30,C039194,P0209,Canada,Ontario,North America,Online Store,Express Shipping,Delivered,1,48.85,40.28,8.57,17.544,48.85,5.0,Yes,2023-10-05
+ORD0000028,2023-08-08,C041699,P0193,Mexico,Mexico City,North America,Marketplace,Standard Shipping,Delivered,1,14.53,11.98,2.55,17.55,14.53,1.0,Yes,2023-08-09
+ORD0000029,2023-06-22,C009377,P0008,France,Ile-de-France,Europe,Marketplace,Standard Shipping,Delivered,1,20.86,16.93,3.93,18.84,20.86,2.0,Yes,2023-06-24
+ORD0000030,2023-07-11,C031801,P0059,United States,New York,North America,Retail Store,Standard Shipping,Delivered,1,32.39,26.71,5.68,17.536,32.39,4.0,Yes,2023-07-15
+ORD0000031,2023-11-02,C033595,P0063,Argentina,Buenos Aires,South America,Corporate,Express Shipping,Delivered,5,287.12,222.11,65.01,22.642,57.424,2.0,Yes,2023-11-04
+ORD0000032,2023-09-17,C045115,P0279,Canada,Ontario,North America,Online Store,Same Day,Delivered,3,178.59,147.27,31.32,17.537,59.53,5.0,Yes,2023-09-22
+ORD0000033,2023-01-12,C021986,P0055,Canada,Ontario,North America,Corporate,Standard Shipping,Delivered,1,47.76,39.38,8.38,17.546,47.76,5.0,Yes,2023-01-17
+ORD0000034,2023-08-04,C034864,P0253,Mexico,Mexico City,North America,Marketplace,Standard Shipping,Delivered,2,56.44,46.54,9.9,17.541,28.22,6.0,Yes,2023-08-10
+ORD0000035,2023-12-09,C041775,P0191,Nigeria,Lagos,Africa,Online Store,Standard Shipping,Delivered,1,16.91,14.73,2.18,12.892,16.91,6.0,Yes,2023-12-15
+ORD0000036,2023-02-26,C014352,P0236,China,Shanghai,Asia,Retail Store,Standard Shipping,Delivered,2,56.39,46.61,9.78,17.344,28.195,4.0,Yes,2023-03-02
+ORD0000037,2023-12-11,C006800,P0109,Japan,Tokyo,Asia,Online Store,Express Shipping,Delivered,2,83.61,69.11,14.5,17.342,41.805,3.0,Yes,2023-12-14
+ORD0000038,2023-02-28,C001544,P0192,Canada,Ontario,North America,Online Store,International,Delivered,3,95.07,78.4,16.67,17.534,31.69,2.0,Yes,2023-03-02
+ORD0000039,2023-04-08,C037490,P0226,Japan,Tokyo,Asia,Retail Store,Same Day,Delivered,3,98.27,81.23,17.04,17.34,32.7567,5.0,Yes,2023-04-13
+ORD0000040,2023-11-20,C016794,P0082,Japan,Tokyo,Asia,Online Store,International,Delivered,3,112.34,92.86,19.48,17.34,37.4467,5.0,Yes,2023-11-25
+ORD0000041,2023-08-21,C018117,P0184,Argentina,Buenos Aires,South America,Corporate,Express Shipping,Delivered,4,72.19,55.84,16.35,22.649,18.0475,2.0,Yes,2023-08-23
+ORD0000042,2023-08-08,C030963,P0001,China,Shanghai,Asia,Online Store,Same Day,Delivered,3,50.32,41.59,8.73,17.349,16.7733,4.0,No,2023-08-12
+ORD0000043,2023-08-22,C024232,P0309,Chile,Santiago,South America,Marketplace,Standard Shipping,Delivered,4,90.57,70.06,20.51,22.645,22.6425,2.0,Yes,2023-08-24
+ORD0000044,2023-02-12,C038837,P0284,Brazil,Sao Paulo,South America,Retail Store,Standard Shipping,Delivered,1,41.04,31.75,9.29,22.636,41.04,4.0,Yes,2023-02-16
+ORD0000045,2023-04-06,C019456,P0086,China,Shanghai,Asia,Online Store,Express Shipping,Delivered,1,22.7,18.76,3.94,17.357,22.7,3.0,Yes,2023-04-09
+ORD0000046,2023-07-20,C031255,P0317,Spain,Madrid,Europe,Online Store,Standard Shipping,Delivered,3,22.07,17.92,4.15,18.804,7.3567,7.0,Yes,2023-07-27
+ORD0000047,2023-03-29,C016621,P0250,Germany,Berlin,Europe,Retail Store,Express Shipping,Delivered,1,51.75,42.01,9.74,18.821,51.75,3.0,Yes,2023-04-01
+ORD0000048,2023-01-21,C016345,P0185,United States,Texas,North America,Online Store,Same Day,Delivered,1,41.3,34.06,7.24,17.53,41.3,4.0,Yes,2023-01-25
+ORD0000049,2023-10-27,C026620,P0222,Canada,British Columbia,North America,Corporate,Standard Shipping,Delivered,2,37.16,30.64,6.52,17.546,18.58,4.0,Yes,2023-10-31
+ORD0000050,2023-02-05,C027361,P0168,Mexico,Mexico City,North America,Direct Sales,Same Day,Delivered,1,42.23,34.82,7.41,17.547,42.23,4.0,Yes,2023-02-09
+ORD0000051,2023-11-12,C015087,P0300,Canada,British Columbia,North America,Retail Store,Standard Shipping,Delivered,1,35.32,29.13,6.19,17.525,35.32,3.0,Yes,2023-11-15
+ORD0000052,2023-04-21,C028792,P0117,Mexico,Mexico City,North America,Marketplace,Same Day,Delivered,2,28.86,23.8,5.06,17.533,14.43,6.0,Yes,2023-04-27
+ORD0000053,2023-09-28,C037344,P0218,Canada,Ontario,North America,Retail Store,Economy,Delivered,5,135.83,112.01,23.82,17.537,27.166,5.0,Yes,2023-10-03
+ORD0000054,2023-07-23,C045227,P0239,India,Delhi,Asia,Retail Store,International,Delivered,2,26.55,21.95,4.6,17.326,13.275,6.0,Yes,2023-07-29
+ORD0000055,2023-11-24,C027337,P0156,France,Ile-de-France,Europe,Retail Store,International,Delivered,1,47.95,38.93,9.02,18.811,47.95,6.0,Yes,2023-11-30
+ORD0000056,2023-12-26,C029168,P0166,Argentina,Buenos Aires,South America,Retail Store,Economy,Shipped,1,28.86,22.32,6.54,22.661,28.86,,Not Applicable,
+ORD0000057,2023-07-27,C008402,P0149,Singapore,Central Region,Asia,Direct Sales,Express Shipping,Delivered,2,39.14,32.35,6.79,17.348,19.57,1.0,Yes,2023-07-28
+ORD0000058,2023-02-17,C046365,P0228,Mexico,Mexico City,North America,Direct Sales,Standard Shipping,Delivered,2,26.31,21.7,4.61,17.522,13.155,3.0,Yes,2023-02-20
+ORD0000059,2023-05-21,C028262,P0188,Spain,Madrid,Europe,Retail Store,Express Shipping,Returned,3,70.99,57.63,13.36,18.82,23.6633,4.0,Yes,2023-05-25
+ORD0000060,2023-02-04,C015530,P0027,Spain,Madrid,Europe,Marketplace,Standard Shipping,Processing,2,73.88,59.98,13.9,18.814,36.94,,Not Applicable,
+ORD0000061,2023-07-09,C001982,P0174,India,Maharashtra,Asia,Retail Store,Express Shipping,Returned,2,51.2,42.32,8.88,17.344,25.6,2.0,Yes,2023-07-11
+ORD0000062,2023-11-01,C026038,P0286,United Kingdom,London,Europe,Corporate,International,Delivered,1,24.43,19.83,4.6,18.829,24.43,4.0,Yes,2023-11-05
+ORD0000063,2023-01-13,C014106,P0314,Germany,Berlin,Europe,Online Store,Express Shipping,Delivered,1,53.27,43.25,10.02,18.81,53.27,3.0,Yes,2023-01-16
+ORD0000064,2023-03-23,C014001,P0260,United Kingdom,Manchester,Europe,Retail Store,Express Shipping,Delivered,2,126.3,102.53,23.77,18.82,63.15,3.0,Yes,2023-03-26
+ORD0000065,2023-09-29,C029017,P0099,South Africa,Gauteng,Africa,Retail Store,Same Day,Returned,1,68.66,59.8,8.86,12.904,68.66,4.0,Yes,2023-10-03
+ORD0000066,2023-12-11,C041461,P0181,France,Ile-de-France,Europe,Marketplace,International,Delivered,2,73.83,59.94,13.89,18.813,36.915,4.0,Yes,2023-12-15
+ORD0000067,2023-07-08,C010433,P0238,Canada,British Columbia,North America,Online Store,Same Day,Delivered,1,33.59,27.7,5.89,17.535,33.59,6.0,Yes,2023-07-14
+ORD0000068,2023-12-04,C018205,P0244,Spain,Madrid,Europe,Marketplace,Standard Shipping,Delivered,2,108.03,87.7,20.33,18.819,54.015,1.0,Yes,2023-12-05
+ORD0000069,2023-05-22,C021751,P0216,Canada,British Columbia,North America,Online Store,Express Shipping,Returned,2,43.03,35.48,7.55,17.546,21.515,2.0,Yes,2023-05-24
+ORD0000070,2023-02-18,C012052,P0179,United Kingdom,Manchester,Europe,Online Store,Standard Shipping,Delivered,5,96.06,77.98,18.08,18.822,19.212,4.0,No,2023-02-22
+ORD0000071,2023-07-31,C042932,P0314,Canada,Ontario,North America,Marketplace,Standard Shipping,Delivered,2,37.08,30.58,6.5,17.53,18.54,6.0,No,2023-08-06
+ORD0000072,2023-09-26,C012835,P0045,Mexico,Mexico City,North America,Corporate,Standard Shipping,Delivered,1,19.66,16.21,3.45,17.548,19.66,7.0,Yes,2023-10-03
+ORD0000073,2023-07-29,C033209,P0029,United States,New York,North America,Retail Store,Express Shipping,Delivered,1,18.7,15.42,3.28,17.54,18.7,5.0,Yes,2023-08-03
+ORD0000074,2023-09-21,C009371,P0318,Mexico,Mexico City,North America,Retail Store,International,Delivered,1,50.08,41.3,8.78,17.532,50.08,3.0,Yes,2023-09-24
+ORD0000075,2023-10-15,C009271,P0207,Canada,British Columbia,North America,Corporate,Express Shipping,Delivered,3,92.54,76.31,16.23,17.538,30.8467,5.0,Yes,2023-10-20
+ORD0000076,2023-05-20,C007792,P0271,China,Shanghai,Asia,Others,Express Shipping,Delivered,2,84.92,70.19,14.73,17.346,42.46,5.0,Yes,2023-05-25
+ORD0000077,2023-09-02,C000997,P0260,Germany,Bavaria,Europe,Marketplace,Same Day,Delivered,1,28.7,23.3,5.4,18.815,28.7,4.0,Yes,2023-09-06
+ORD0000078,2023-03-21,C011992,P0087,Spain,Madrid,Europe,Retail Store,Standard Shipping,Delivered,2,89.02,72.27,16.75,18.816,44.51,6.0,Yes,2023-03-27
+ORD0000079,2023-09-22,C039780,P0056,Canada,British Columbia,North America,Corporate,Standard Shipping,Delivered,1,37.58,30.99,6.59,17.536,37.58,3.0,Yes,2023-09-25
+ORD0000080,2023-04-07,C019768,P0277,Canada,British Columbia,North America,Corporate,Express Shipping,Delivered,1,28.08,23.15,4.93,17.557,28.08,4.0,Yes,2023-04-11
+ORD0000081,2023-07-20,C029076,P0195,China,Shanghai,Asia,Retail Store,International,Delivered,5,159.78,132.07,27.71,17.343,31.956,4.0,Yes,2023-07-24
+ORD0000082,2023-01-09,C015016,P0047,Mexico,Mexico City,North America,Retail Store,Standard Shipping,Delivered,1,22.21,18.31,3.9,17.56,22.21,3.0,Yes,2023-01-12
+ORD0000083,2023-12-23,C025326,P0267,Canada,Ontario,North America,Others,Standard Shipping,Delivered,2,32.33,26.66,5.67,17.538,16.165,1.0,Yes,2023-12-24
+ORD0000084,2023-04-11,C019252,P0307,United Kingdom,Manchester,Europe,Retail Store,Standard Shipping,Shipped,1,14.24,11.56,2.68,18.82,14.24,,Not Applicable,
+ORD0000085,2023-06-25,C035827,P0252,United States,California,North America,Direct Sales,Standard Shipping,Delivered,1,25.66,21.16,4.5,17.537,25.66,3.0,Yes,2023-06-28
+ORD0000086,2023-10-03,C037161,P0005,India,Delhi,Asia,Corporate,Standard Shipping,Processing,4,395.71,327.08,68.63,17.344,98.9275,,Not Applicable,
+ORD0000087,2023-09-17,C018739,P0055,Canada,British Columbia,North America,Retail Store,Standard Shipping,Delivered,2,59.72,49.25,10.47,17.532,29.86,5.0,No,2023-09-22
+ORD0000088,2023-12-01,C004216,P0318,Japan,Tokyo,Asia,Marketplace,Standard Shipping,Delivered,1,56.59,46.78,9.81,17.335,56.59,2.0,Yes,2023-12-03
+ORD0000089,2023-09-03,C022104,P0175,Germany,Bavaria,Europe,Online Store,Express Shipping,Delivered,4,87.73,71.22,16.51,18.819,21.9325,3.0,No,2023-09-06
+ORD0000090,2023-11-27,C028186,P0272,China,Shanghai,Asia,Retail Store,Standard Shipping,Delivered,2,41.18,34.04,7.14,17.339,20.59,1.0,Yes,2023-11-28
+ORD0000091,2023-12-26,C012180,P0054,United States,Texas,North America,Online Store,Standard Shipping,Delivered,1,16.21,13.37,2.84,17.52,16.21,4.0,Yes,2023-12-30
+ORD0000092,2023-12-20,C022445,P0159,Australia,New South Wales,Australia,Marketplace,Standard Shipping,Delivered,1,40.16,35.83,4.33,10.782,40.16,3.0,Yes,2023-12-23
+ORD0000093,2023-06-12,C007159,P0018,Japan,Tokyo,Asia,Online Store,Standard Shipping,Delivered,1,7.55,6.24,1.31,17.351,7.55,2.0,Yes,2023-06-14
+ORD0000094,2023-03-23,C037702,P0058,United Kingdom,London,Europe,Corporate,Standard Shipping,Delivered,3,95.67,77.67,18.0,18.815,31.89,2.0,Yes,2023-03-25
+ORD0000095,2023-07-02,C015413,P0098,Canada,Ontario,North America,Corporate,Standard Shipping,Delivered,1,30.1,24.82,5.28,17.542,30.1,1.0,Yes,2023-07-03
+ORD0000096,2023-04-16,C034758,P0094,United States,New York,North America,Online Store,Standard Shipping,Delivered,2,31.4,25.89,5.51,17.548,15.7,1.0,Yes,2023-04-17
+ORD0000097,2023-06-16,C040570,P0033,Mexico,Mexico City,North America,Online Store,Standard Shipping,Delivered,1,45.15,37.23,7.92,17.542,45.15,2.0,Yes,2023-06-18
+ORD0000098,2023-08-13,C035794,P0003,Singapore,Central Region,Asia,Marketplace,Standard Shipping,Delivered,2,58.62,48.45,10.17,17.349,29.31,6.0,Yes,2023-08-19
+ORD0000099,2023-10-05,C022831,P0320,New Zealand,Auckland,Australia,Marketplace,Express Shipping,Delivered,1,31.96,28.52,3.44,10.763,31.96,3.0,Yes,2023-10-08
+ORD0000100,2023-05-16,C022638,P0301,United States,New York,North America,Online Store,Same Day,Processing,1,58.98,48.64,10.34,17.531,58.98,,Not Applicable,

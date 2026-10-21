@@ -1,0 +1,321 @@
+Product_ID,Product_Name,Product_Category,Product_Subcategory,Brand,List_Price_USD
+P0001,"Laptop Pro 15""",Electronics,Laptops,Nexora,116.98
+P0002,Smartphone X,Electronics,Mobile Phones,Aster,24.64
+P0003,Office Chair,Furniture,Chairs,PrimeLine,91.57
+P0004,Running Shoes,Sports,Running Shoes,UrbanEdge,74.9
+P0005,Dining Table,Furniture,Dining Tables,Vista,37.42
+P0006,Monitor ViewMax,Electronics,Monitors,Nexora,151.17
+P0007,T-Shirt Classic,Clothing,T-Shirts,Aster,410.03
+P0008,Headphones Pro,Electronics,Headphones,PrimeLine,455.27
+P0009,Sofa Comfort,Furniture,Sofas,UrbanEdge,119.33
+P0010,Backpack Urban,Sports,Backpacks,Vista,354.81
+P0011,Mobile Phones Series 011,Electronics,Mobile Phones,Nexora,148.65
+P0012,Dining Tables Series 012,Furniture,Dining Tables,Aster,350.55
+P0013,Jeans Series 013,Clothing,Jeans,PrimeLine,110.12
+P0014,Storage Series 014,Home & Kitchen,Storage,UrbanEdge,378.8
+P0015,Hair Care Series 015,Beauty,Hair Care,Vista,291.23
+P0016,Backpacks Series 016,Sports,Backpacks,Nexora,291.21
+P0017,Headphones Series 017,Electronics,Headphones,Aster,438.2
+P0018,Sofas Series 018,Furniture,Sofas,PrimeLine,117.3
+P0019,Shirts Series 019,Clothing,Shirts,UrbanEdge,219.71
+P0020,Bedding Series 020,Home & Kitchen,Bedding,Vista,195.43
+P0021,Skincare Series 021,Beauty,Skincare,Nexora,15.91
+P0022,Running Shoes Series 022,Sports,Running Shoes,Aster,258.27
+P0023,Monitors Series 023,Electronics,Monitors,PrimeLine,289.08
+P0024,Desks Series 024,Furniture,Desks,UrbanEdge,447.4
+P0025,T-Shirts Series 025,Clothing,T-Shirts,Vista,289.05
+P0026,Cookware Series 026,Home & Kitchen,Cookware,Nexora,106.45
+P0027,Fragrance Series 027,Beauty,Fragrance,Aster,349.92
+P0028,Fitness Equipment Series 028,Sports,Fitness Equipment,PrimeLine,181.81
+P0029,Accessories Series 029,Electronics,Accessories,UrbanEdge,15.69
+P0030,Chairs Series 030,Furniture,Chairs,Vista,340.51
+P0031,Jackets Series 031,Clothing,Jackets,Nexora,152.83
+P0032,Home Decor Series 032,Home & Kitchen,Home Decor,Aster,432.83
+P0033,Hair Care Series 033,Beauty,Hair Care,PrimeLine,187.56
+P0034,Backpacks Series 034,Sports,Backpacks,UrbanEdge,244.67
+P0035,Laptops Series 035,Electronics,Laptops,Vista,264.81
+P0036,Dining Tables Series 036,Furniture,Dining Tables,Nexora,173.8
+P0037,Jeans Series 037,Clothing,Jeans,Aster,17.74
+P0038,Storage Series 038,Home & Kitchen,Storage,PrimeLine,128.01
+P0039,Skincare Series 039,Beauty,Skincare,UrbanEdge,432.4
+P0040,Running Shoes Series 040,Sports,Running Shoes,Vista,439.69
+P0041,Mobile Phones Series 041,Electronics,Mobile Phones,Nexora,79.67
+P0042,Sofas Series 042,Furniture,Sofas,Aster,100.36
+P0043,Shirts Series 043,Clothing,Shirts,PrimeLine,235.63
+P0044,Bedding Series 044,Home & Kitchen,Bedding,UrbanEdge,67.84
+P0045,Fragrance Series 045,Beauty,Fragrance,Vista,22.11
+P0046,Fitness Equipment Series 046,Sports,Fitness Equipment,Nexora,380.74
+P0047,Headphones Series 047,Electronics,Headphones,Aster,186.26
+P0048,Desks Series 048,Furniture,Desks,PrimeLine,382.41
+P0049,T-Shirts Series 049,Clothing,T-Shirts,UrbanEdge,19.64
+P0050,Cookware Series 050,Home & Kitchen,Cookware,Vista,61.87
+P0051,Hair Care Series 051,Beauty,Hair Care,Nexora,404.51
+P0052,Backpacks Series 052,Sports,Backpacks,Aster,189.34
+P0053,Monitors Series 053,Electronics,Monitors,PrimeLine,419.84
+P0054,Chairs Series 054,Furniture,Chairs,UrbanEdge,87.27
+P0055,Jackets Series 055,Clothing,Jackets,Vista,143.41
+P0056,Home Decor Series 056,Home & Kitchen,Home Decor,Nexora,120.23
+P0057,Skincare Series 057,Beauty,Skincare,Aster,161.67
+P0058,Running Shoes Series 058,Sports,Running Shoes,PrimeLine,198.19
+P0059,Accessories Series 059,Electronics,Accessories,UrbanEdge,264.35
+P0060,Dining Tables Series 060,Furniture,Dining Tables,Vista,237.78
+P0061,Jeans Series 061,Clothing,Jeans,Nexora,388.48
+P0062,Storage Series 062,Home & Kitchen,Storage,Aster,277.87
+P0063,Fragrance Series 063,Beauty,Fragrance,PrimeLine,383.8
+P0064,Fitness Equipment Series 064,Sports,Fitness Equipment,UrbanEdge,287.46
+P0065,Laptops Series 065,Electronics,Laptops,Vista,158.5
+P0066,Sofas Series 066,Furniture,Sofas,Nexora,403.25
+P0067,Shirts Series 067,Clothing,Shirts,Aster,71.9
+P0068,Bedding Series 068,Home & Kitchen,Bedding,PrimeLine,109.45
+P0069,Hair Care Series 069,Beauty,Hair Care,UrbanEdge,215.16
+P0070,Backpacks Series 070,Sports,Backpacks,Vista,117.39
+P0071,Mobile Phones Series 071,Electronics,Mobile Phones,Nexora,128.97
+P0072,Desks Series 072,Furniture,Desks,Aster,117.45
+P0073,T-Shirts Series 073,Clothing,T-Shirts,PrimeLine,193.08
+P0074,Cookware Series 074,Home & Kitchen,Cookware,UrbanEdge,214.27
+P0075,Skincare Series 075,Beauty,Skincare,Vista,211.37
+P0076,Running Shoes Series 076,Sports,Running Shoes,Nexora,33.05
+P0077,Headphones Series 077,Electronics,Headphones,Aster,480.93
+P0078,Chairs Series 078,Furniture,Chairs,PrimeLine,317.03
+P0079,Jackets Series 079,Clothing,Jackets,UrbanEdge,253.37
+P0080,Home Decor Series 080,Home & Kitchen,Home Decor,Vista,430.86
+P0081,Fragrance Series 081,Beauty,Fragrance,Nexora,58.59
+P0082,Fitness Equipment Series 082,Sports,Fitness Equipment,Aster,492.43
+P0083,Monitors Series 083,Electronics,Monitors,PrimeLine,494.94
+P0084,Dining Tables Series 084,Furniture,Dining Tables,UrbanEdge,356.24
+P0085,Jeans Series 085,Clothing,Jeans,Vista,60.31
+P0086,Storage Series 086,Home & Kitchen,Storage,Nexora,132.15
+P0087,Hair Care Series 087,Beauty,Hair Care,Aster,471.83
+P0088,Backpacks Series 088,Sports,Backpacks,PrimeLine,157.52
+P0089,Accessories Series 089,Electronics,Accessories,UrbanEdge,174.95
+P0090,Sofas Series 090,Furniture,Sofas,Vista,216.94
+P0091,Shirts Series 091,Clothing,Shirts,Nexora,492.33
+P0092,Bedding Series 092,Home & Kitchen,Bedding,Aster,161.29
+P0093,Skincare Series 093,Beauty,Skincare,PrimeLine,257.45
+P0094,Running Shoes Series 094,Sports,Running Shoes,UrbanEdge,372.43
+P0095,Laptops Series 095,Electronics,Laptops,Vista,274.66
+P0096,Desks Series 096,Furniture,Desks,Nexora,489.56
+P0097,T-Shirts Series 097,Clothing,T-Shirts,Aster,69.94
+P0098,Cookware Series 098,Home & Kitchen,Cookware,PrimeLine,325.89
+P0099,Fragrance Series 099,Beauty,Fragrance,UrbanEdge,114.74
+P0100,Fitness Equipment Series 100,Sports,Fitness Equipment,Vista,161.03
+P0101,Mobile Phones Series 101,Electronics,Mobile Phones,Nexora,263.18
+P0102,Chairs Series 102,Furniture,Chairs,Aster,112.13
+P0103,Jackets Series 103,Clothing,Jackets,PrimeLine,48.07
+P0104,Home Decor Series 104,Home & Kitchen,Home Decor,UrbanEdge,51.61
+P0105,Hair Care Series 105,Beauty,Hair Care,Vista,448.28
+P0106,Backpacks Series 106,Sports,Backpacks,Nexora,78.53
+P0107,Headphones Series 107,Electronics,Headphones,Aster,375.38
+P0108,Dining Tables Series 108,Furniture,Dining Tables,PrimeLine,429.89
+P0109,Jeans Series 109,Clothing,Jeans,UrbanEdge,392.68
+P0110,Storage Series 110,Home & Kitchen,Storage,Vista,376.18
+P0111,Skincare Series 111,Beauty,Skincare,Nexora,182.41
+P0112,Running Shoes Series 112,Sports,Running Shoes,Aster,14.06
+P0113,Monitors Series 113,Electronics,Monitors,PrimeLine,161.9
+P0114,Sofas Series 114,Furniture,Sofas,UrbanEdge,77.81
+P0115,Shirts Series 115,Clothing,Shirts,Vista,158.09
+P0116,Bedding Series 116,Home & Kitchen,Bedding,Nexora,408.38
+P0117,Fragrance Series 117,Beauty,Fragrance,Aster,284.35
+P0118,Fitness Equipment Series 118,Sports,Fitness Equipment,PrimeLine,184.23
+P0119,Accessories Series 119,Electronics,Accessories,UrbanEdge,125.53
+P0120,Desks Series 120,Furniture,Desks,Vista,189.46
+P0121,T-Shirts Series 121,Clothing,T-Shirts,Nexora,96.17
+P0122,Cookware Series 122,Home & Kitchen,Cookware,Aster,361.28
+P0123,Hair Care Series 123,Beauty,Hair Care,PrimeLine,202.27
+P0124,Backpacks Series 124,Sports,Backpacks,UrbanEdge,404.83
+P0125,Laptops Series 125,Electronics,Laptops,Vista,298.14
+P0126,Chairs Series 126,Furniture,Chairs,Nexora,497.04
+P0127,Jackets Series 127,Clothing,Jackets,Aster,424.04
+P0128,Home Decor Series 128,Home & Kitchen,Home Decor,PrimeLine,449.84
+P0129,Skincare Series 129,Beauty,Skincare,UrbanEdge,314.84
+P0130,Running Shoes Series 130,Sports,Running Shoes,Vista,101.23
+P0131,Mobile Phones Series 131,Electronics,Mobile Phones,Nexora,447.98
+P0132,Dining Tables Series 132,Furniture,Dining Tables,Aster,112.51
+P0133,Jeans Series 133,Clothing,Jeans,PrimeLine,359.32
+P0134,Storage Series 134,Home & Kitchen,Storage,UrbanEdge,22.95
+P0135,Fragrance Series 135,Beauty,Fragrance,Vista,48.31
+P0136,Fitness Equipment Series 136,Sports,Fitness Equipment,Nexora,118.72
+P0137,Headphones Series 137,Electronics,Headphones,Aster,441.45
+P0138,Sofas Series 138,Furniture,Sofas,PrimeLine,62.39
+P0139,Shirts Series 139,Clothing,Shirts,UrbanEdge,183.63
+P0140,Bedding Series 140,Home & Kitchen,Bedding,Vista,176.54
+P0141,Hair Care Series 141,Beauty,Hair Care,Nexora,63.96
+P0142,Backpacks Series 142,Sports,Backpacks,Aster,392.98
+P0143,Monitors Series 143,Electronics,Monitors,PrimeLine,300.25
+P0144,Desks Series 144,Furniture,Desks,UrbanEdge,409.7
+P0145,T-Shirts Series 145,Clothing,T-Shirts,Vista,43.92
+P0146,Cookware Series 146,Home & Kitchen,Cookware,Nexora,98.23
+P0147,Skincare Series 147,Beauty,Skincare,Aster,417.84
+P0148,Running Shoes Series 148,Sports,Running Shoes,PrimeLine,174.93
+P0149,Accessories Series 149,Electronics,Accessories,UrbanEdge,376.35
+P0150,Chairs Series 150,Furniture,Chairs,Vista,183.8
+P0151,Jackets Series 151,Clothing,Jackets,Nexora,188.03
+P0152,Home Decor Series 152,Home & Kitchen,Home Decor,Aster,372.94
+P0153,Fragrance Series 153,Beauty,Fragrance,PrimeLine,320.94
+P0154,Fitness Equipment Series 154,Sports,Fitness Equipment,UrbanEdge,343.16
+P0155,Laptops Series 155,Electronics,Laptops,Vista,79.47
+P0156,Dining Tables Series 156,Furniture,Dining Tables,Nexora,140.68
+P0157,Jeans Series 157,Clothing,Jeans,Aster,157.25
+P0158,Storage Series 158,Home & Kitchen,Storage,PrimeLine,437.77
+P0159,Hair Care Series 159,Beauty,Hair Care,UrbanEdge,298.56
+P0160,Backpacks Series 160,Sports,Backpacks,Vista,19.95
+P0161,Mobile Phones Series 161,Electronics,Mobile Phones,Nexora,90.8
+P0162,Sofas Series 162,Furniture,Sofas,Aster,40.46
+P0163,Shirts Series 163,Clothing,Shirts,PrimeLine,61.83
+P0164,Bedding Series 164,Home & Kitchen,Bedding,UrbanEdge,383.42
+P0165,Skincare Series 165,Beauty,Skincare,Vista,242.46
+P0166,Running Shoes Series 166,Sports,Running Shoes,Nexora,496.78
+P0167,Headphones Series 167,Electronics,Headphones,Aster,414.07
+P0168,Desks Series 168,Furniture,Desks,PrimeLine,181.06
+P0169,T-Shirts Series 169,Clothing,T-Shirts,UrbanEdge,260.46
+P0170,Cookware Series 170,Home & Kitchen,Cookware,Vista,156.72
+P0171,Fragrance Series 171,Beauty,Fragrance,Nexora,110.0
+P0172,Fitness Equipment Series 172,Sports,Fitness Equipment,Aster,146.88
+P0173,Monitors Series 173,Electronics,Monitors,PrimeLine,488.14
+P0174,Chairs Series 174,Furniture,Chairs,UrbanEdge,276.59
+P0175,Jackets Series 175,Clothing,Jackets,Vista,418.17
+P0176,Home Decor Series 176,Home & Kitchen,Home Decor,Nexora,260.26
+P0177,Hair Care Series 177,Beauty,Hair Care,Aster,204.07
+P0178,Backpacks Series 178,Sports,Backpacks,PrimeLine,497.44
+P0179,Accessories Series 179,Electronics,Accessories,UrbanEdge,412.54
+P0180,Dining Tables Series 180,Furniture,Dining Tables,Vista,491.5
+P0181,Jeans Series 181,Clothing,Jeans,Nexora,92.46
+P0182,Storage Series 182,Home & Kitchen,Storage,Aster,22.64
+P0183,Skincare Series 183,Beauty,Skincare,PrimeLine,92.18
+P0184,Running Shoes Series 184,Sports,Running Shoes,UrbanEdge,233.28
+P0185,Laptops Series 185,Electronics,Laptops,Vista,386.98
+P0186,Sofas Series 186,Furniture,Sofas,Nexora,286.98
+P0187,Shirts Series 187,Clothing,Shirts,Aster,314.96
+P0188,Bedding Series 188,Home & Kitchen,Bedding,PrimeLine,485.97
+P0189,Fragrance Series 189,Beauty,Fragrance,UrbanEdge,261.93
+P0190,Fitness Equipment Series 190,Sports,Fitness Equipment,Vista,53.97
+P0191,Mobile Phones Series 191,Electronics,Mobile Phones,Nexora,25.34
+P0192,Desks Series 192,Furniture,Desks,Aster,107.48
+P0193,T-Shirts Series 193,Clothing,T-Shirts,PrimeLine,351.75
+P0194,Cookware Series 194,Home & Kitchen,Cookware,UrbanEdge,41.5
+P0195,Hair Care Series 195,Beauty,Hair Care,Vista,82.11
+P0196,Backpacks Series 196,Sports,Backpacks,Nexora,494.23
+P0197,Headphones Series 197,Electronics,Headphones,Aster,422.48
+P0198,Chairs Series 198,Furniture,Chairs,PrimeLine,174.71
+P0199,Jackets Series 199,Clothing,Jackets,UrbanEdge,74.43
+P0200,Home Decor Series 200,Home & Kitchen,Home Decor,Vista,194.43
+P0201,Skincare Series 201,Beauty,Skincare,Nexora,316.59
+P0202,Running Shoes Series 202,Sports,Running Shoes,Aster,141.61
+P0203,Monitors Series 203,Electronics,Monitors,PrimeLine,212.22
+P0204,Dining Tables Series 204,Furniture,Dining Tables,UrbanEdge,200.68
+P0205,Jeans Series 205,Clothing,Jeans,Vista,43.9
+P0206,Storage Series 206,Home & Kitchen,Storage,Nexora,385.57
+P0207,Fragrance Series 207,Beauty,Fragrance,Aster,216.95
+P0208,Fitness Equipment Series 208,Sports,Fitness Equipment,PrimeLine,383.52
+P0209,Accessories Series 209,Electronics,Accessories,UrbanEdge,240.55
+P0210,Sofas Series 210,Furniture,Sofas,Vista,346.84
+P0211,Shirts Series 211,Clothing,Shirts,Nexora,145.14
+P0212,Bedding Series 212,Home & Kitchen,Bedding,Aster,42.77
+P0213,Hair Care Series 213,Beauty,Hair Care,PrimeLine,56.38
+P0214,Backpacks Series 214,Sports,Backpacks,UrbanEdge,319.09
+P0215,Laptops Series 215,Electronics,Laptops,Vista,463.65
+P0216,Desks Series 216,Furniture,Desks,Nexora,222.22
+P0217,T-Shirts Series 217,Clothing,T-Shirts,Aster,180.24
+P0218,Cookware Series 218,Home & Kitchen,Cookware,PrimeLine,282.65
+P0219,Skincare Series 219,Beauty,Skincare,UrbanEdge,399.12
+P0220,Running Shoes Series 220,Sports,Running Shoes,Vista,191.06
+P0221,Mobile Phones Series 221,Electronics,Mobile Phones,Nexora,251.12
+P0222,Chairs Series 222,Furniture,Chairs,Aster,277.89
+P0223,Jackets Series 223,Clothing,Jackets,PrimeLine,218.73
+P0224,Home Decor Series 224,Home & Kitchen,Home Decor,UrbanEdge,69.62
+P0225,Fragrance Series 225,Beauty,Fragrance,Vista,142.33
+P0226,Fitness Equipment Series 226,Sports,Fitness Equipment,Nexora,30.54
+P0227,Headphones Series 227,Electronics,Headphones,Aster,356.15
+P0228,Dining Tables Series 228,Furniture,Dining Tables,PrimeLine,495.25
+P0229,Jeans Series 229,Clothing,Jeans,UrbanEdge,373.59
+P0230,Storage Series 230,Home & Kitchen,Storage,Vista,80.27
+P0231,Hair Care Series 231,Beauty,Hair Care,Nexora,428.84
+P0232,Backpacks Series 232,Sports,Backpacks,Aster,157.7
+P0233,Monitors Series 233,Electronics,Monitors,PrimeLine,129.43
+P0234,Sofas Series 234,Furniture,Sofas,UrbanEdge,305.62
+P0235,Shirts Series 235,Clothing,Shirts,Vista,475.61
+P0236,Bedding Series 236,Home & Kitchen,Bedding,Nexora,339.39
+P0237,Skincare Series 237,Beauty,Skincare,Aster,147.83
+P0238,Running Shoes Series 238,Sports,Running Shoes,PrimeLine,90.96
+P0239,Accessories Series 239,Electronics,Accessories,UrbanEdge,469.16
+P0240,Desks Series 240,Furniture,Desks,Vista,168.02
+P0241,T-Shirts Series 241,Clothing,T-Shirts,Nexora,270.78
+P0242,Cookware Series 242,Home & Kitchen,Cookware,Aster,169.57
+P0243,Fragrance Series 243,Beauty,Fragrance,PrimeLine,462.36
+P0244,Fitness Equipment Series 244,Sports,Fitness Equipment,UrbanEdge,32.72
+P0245,Laptops Series 245,Electronics,Laptops,Vista,160.26
+P0246,Chairs Series 246,Furniture,Chairs,Nexora,143.04
+P0247,Jackets Series 247,Clothing,Jackets,Aster,221.87
+P0248,Home Decor Series 248,Home & Kitchen,Home Decor,PrimeLine,494.74
+P0249,Hair Care Series 249,Beauty,Hair Care,UrbanEdge,187.42
+P0250,Backpacks Series 250,Sports,Backpacks,Vista,425.97
+P0251,Mobile Phones Series 251,Electronics,Mobile Phones,Nexora,109.53
+P0252,Dining Tables Series 252,Furniture,Dining Tables,Aster,442.28
+P0253,Jeans Series 253,Clothing,Jeans,PrimeLine,374.66
+P0254,Storage Series 254,Home & Kitchen,Storage,UrbanEdge,72.89
+P0255,Skincare Series 255,Beauty,Skincare,Vista,473.35
+P0256,Running Shoes Series 256,Sports,Running Shoes,Nexora,411.06
+P0257,Headphones Series 257,Electronics,Headphones,Aster,88.42
+P0258,Sofas Series 258,Furniture,Sofas,PrimeLine,244.7
+P0259,Shirts Series 259,Clothing,Shirts,UrbanEdge,191.14
+P0260,Bedding Series 260,Home & Kitchen,Bedding,Vista,44.37
+P0261,Fragrance Series 261,Beauty,Fragrance,Nexora,210.89
+P0262,Fitness Equipment Series 262,Sports,Fitness Equipment,Aster,414.55
+P0263,Monitors Series 263,Electronics,Monitors,PrimeLine,463.97
+P0264,Desks Series 264,Furniture,Desks,UrbanEdge,136.96
+P0265,T-Shirts Series 265,Clothing,T-Shirts,Vista,357.14
+P0266,Cookware Series 266,Home & Kitchen,Cookware,Nexora,272.66
+P0267,Hair Care Series 267,Beauty,Hair Care,Aster,56.23
+P0268,Backpacks Series 268,Sports,Backpacks,PrimeLine,242.2
+P0269,Accessories Series 269,Electronics,Accessories,UrbanEdge,219.44
+P0270,Chairs Series 270,Furniture,Chairs,Vista,297.02
+P0271,Jackets Series 271,Clothing,Jackets,Nexora,293.98
+P0272,Home Decor Series 272,Home & Kitchen,Home Decor,Aster,393.38
+P0273,Skincare Series 273,Beauty,Skincare,PrimeLine,34.19
+P0274,Running Shoes Series 274,Sports,Running Shoes,UrbanEdge,356.66
+P0275,Laptops Series 275,Electronics,Laptops,Vista,153.64
+P0276,Dining Tables Series 276,Furniture,Dining Tables,Nexora,191.04
+P0277,Jeans Series 277,Clothing,Jeans,Aster,271.22
+P0278,Storage Series 278,Home & Kitchen,Storage,PrimeLine,394.4
+P0279,Fragrance Series 279,Beauty,Fragrance,UrbanEdge,153.4
+P0280,Fitness Equipment Series 280,Sports,Fitness Equipment,Vista,85.33
+P0281,Mobile Phones Series 281,Electronics,Mobile Phones,Nexora,244.52
+P0282,Sofas Series 282,Furniture,Sofas,Aster,74.59
+P0283,Shirts Series 283,Clothing,Shirts,PrimeLine,252.82
+P0284,Bedding Series 284,Home & Kitchen,Bedding,UrbanEdge,287.91
+P0285,Hair Care Series 285,Beauty,Hair Care,Vista,434.81
+P0286,Backpacks Series 286,Sports,Backpacks,Nexora,39.17
+P0287,Headphones Series 287,Electronics,Headphones,Aster,377.56
+P0288,Desks Series 288,Furniture,Desks,PrimeLine,430.15
+P0289,T-Shirts Series 289,Clothing,T-Shirts,UrbanEdge,86.32
+P0290,Cookware Series 290,Home & Kitchen,Cookware,Vista,104.98
+P0291,Skincare Series 291,Beauty,Skincare,Nexora,17.05
+P0292,Running Shoes Series 292,Sports,Running Shoes,Aster,242.91
+P0293,Monitors Series 293,Electronics,Monitors,PrimeLine,125.79
+P0294,Chairs Series 294,Furniture,Chairs,UrbanEdge,67.64
+P0295,Jackets Series 295,Clothing,Jackets,Vista,333.19
+P0296,Home Decor Series 296,Home & Kitchen,Home Decor,Nexora,450.21
+P0297,Fragrance Series 297,Beauty,Fragrance,Aster,385.72
+P0298,Fitness Equipment Series 298,Sports,Fitness Equipment,PrimeLine,331.38
+P0299,Accessories Series 299,Electronics,Accessories,UrbanEdge,361.99
+P0300,Dining Tables Series 300,Furniture,Dining Tables,Vista,38.45
+P0301,Jeans Series 301,Clothing,Jeans,Nexora,112.42
+P0302,Storage Series 302,Home & Kitchen,Storage,Aster,465.44
+P0303,Hair Care Series 303,Beauty,Hair Care,PrimeLine,355.79
+P0304,Backpacks Series 304,Sports,Backpacks,UrbanEdge,239.64
+P0305,Laptops Series 305,Electronics,Laptops,Vista,342.9
+P0306,Sofas Series 306,Furniture,Sofas,Nexora,419.77
+P0307,Shirts Series 307,Clothing,Shirts,Aster,266.19
+P0308,Bedding Series 308,Home & Kitchen,Bedding,PrimeLine,209.09
+P0309,Skincare Series 309,Beauty,Skincare,UrbanEdge,475.26
+P0310,Running Shoes Series 310,Sports,Running Shoes,Vista,383.15
+P0311,Mobile Phones Series 311,Electronics,Mobile Phones,Nexora,458.16
+P0312,Desks Series 312,Furniture,Desks,Aster,288.46
+P0313,T-Shirts Series 313,Clothing,T-Shirts,PrimeLine,371.13
+P0314,Cookware Series 314,Home & Kitchen,Cookware,UrbanEdge,35.38
+P0315,Fragrance Series 315,Beauty,Fragrance,Vista,391.55
+P0316,Fitness Equipment Series 316,Sports,Fitness Equipment,Nexora,394.62
+P0317,Headphones Series 317,Electronics,Headphones,Aster,368.43
+P0318,Chairs Series 318,Furniture,Chairs,PrimeLine,45.84
+P0319,Jackets Series 319,Clothing,Jackets,UrbanEdge,429.7
+P0320,Home Decor Series 320,Home & Kitchen,Home Decor,Vista,419.71

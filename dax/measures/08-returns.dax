@@ -1,0 +1,157 @@
+// ============================================================================
+// ENTERPRISE POWER BI ANALYTICS PORTFOLIO — DAX MEASURE LIBRARY
+// Section: 08 Returns
+// Author: Datta Sable (https://dattasable.com)
+// Source: Datta_Sable_PowerBI_DAX_Visuals_Implementation_Handbook.xlsx
+// ============================================================================
+
+// ============================================================================
+// Measure Name: Return Cases
+// Purpose: Calculate return cases for Returns analytics.
+// Business Definition: Return records count
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: fact_returns_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Return Cases = 
+COUNTROWS ( fact_returns_2023 )
+
+// ============================================================================
+// Measure Name: Returned Orders
+// Purpose: Calculate returned orders for Returns analytics.
+// Business Definition: Distinct orders with return
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: fact_returns_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Returned Orders = 
+DISTINCTCOUNT ( fact_returns_2023[Order_ID] )
+
+// ============================================================================
+// Measure Name: Return Rate
+// Purpose: Calculate return rate for Returns analytics.
+// Business Definition: Return orders / orders; ensure same period basis
+// Expected Data Type: Percentage
+// Formatting: 0.0%
+// Required Tables: fact_orders_2023 / Dependent Measures
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Return Rate = 
+DIVIDE ( [Returned Orders], [Total Orders] )
+
+// ============================================================================
+// Measure Name: Return Value
+// Purpose: Calculate return value for Returns analytics.
+// Business Definition: Returned merchandise value
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: fact_returns_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Return Value = 
+SUM ( fact_returns_2023[Return_Value_USD] )
+
+// ============================================================================
+// Measure Name: Refund Amount
+// Purpose: Calculate refund amount for Returns analytics.
+// Business Definition: Refunds actually recorded
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: fact_returns_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Refund Amount = 
+SUM ( fact_returns_2023[Refund_Amount_USD] )
+
+// ============================================================================
+// Measure Name: Average Refund
+// Purpose: Calculate average refund for Returns analytics.
+// Business Definition: Refund per return case
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: fact_orders_2023 / Dependent Measures
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Average Refund = 
+DIVIDE ( [Refund Amount], [Return Cases] )
+
+// ============================================================================
+// Measure Name: Refunded Cases
+// Purpose: Calculate refunded cases for Returns analytics.
+// Business Definition: Resolution-specific cases
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: fact_returns_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Refunded Cases = 
+CALCULATE ( [Return Cases], fact_returns_2023[Resolution] = "Refunded" )
+
+// ============================================================================
+// Measure Name: Exchanged Cases
+// Purpose: Calculate exchanged cases for Returns analytics.
+// Business Definition: Resolution-specific cases
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: fact_returns_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Exchanged Cases = 
+CALCULATE ( [Return Cases], fact_returns_2023[Resolution] = "Exchanged" )
+
+// ============================================================================
+// Measure Name: Returned Orders by Return Date
+// Purpose: Calculate returned orders by return date for Returns analytics.
+// Business Definition: Return-date time axis; inactive date relationship
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: fact_returns_2023, DimDate
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Returned Orders by Return Date = 
+CALCULATE ( [Returned Orders], USERELATIONSHIP ( DimDate[Date], fact_returns_2023[Return_Date] ) )
+
+// ============================================================================
+// Measure Name: Return Value by Return Date
+// Purpose: Calculate return value by return date for Returns analytics.
+// Business Definition: Return-date measure
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: fact_returns_2023, DimDate
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Return Value by Return Date = 
+CALCULATE ( [Return Value], USERELATIONSHIP ( DimDate[Date], fact_returns_2023[Return_Date] ) )
+

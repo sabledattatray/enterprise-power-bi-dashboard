@@ -1,0 +1,157 @@
+// ============================================================================
+// ENTERPRISE POWER BI ANALYTICS PORTFOLIO — DAX MEASURE LIBRARY
+// Section: 02 Sales
+// Author: Datta Sable (https://dattasable.com)
+// Source: Datta_Sable_PowerBI_DAX_Visuals_Implementation_Handbook.xlsx
+// ============================================================================
+
+// ============================================================================
+// Measure Name: Sales PY
+// Purpose: Calculate sales py for Sales analytics.
+// Business Definition: Requires previous-year actual transactions; 2022 absent
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: DimDate
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Sales PY = 
+CALCULATE ( [Total Sales], SAMEPERIODLASTYEAR ( DimDate[Date] ) )
+
+// ============================================================================
+// Measure Name: Sales YoY %
+// Purpose: Calculate sales yoy % for All analytics.
+// Business Definition: Blank when no prior-year data
+// Expected Data Type: Percentage
+// Formatting: 0.0%
+// Required Tables: fact_orders_2023 / Dependent Measures
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Sales YoY % = 
+DIVIDE ( [Total Sales] - [Sales PY], [Sales PY] )
+
+// ============================================================================
+// Measure Name: Sales YTD
+// Purpose: Calculate sales ytd for Sales analytics.
+// Business Definition: Calendar-year accumulation
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: DimDate
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Sales YTD = 
+TOTALYTD ( [Total Sales], DimDate[Date] )
+
+// ============================================================================
+// Measure Name: Sales QTD
+// Purpose: Calculate sales qtd for Sales analytics.
+// Business Definition: Quarter accumulation
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: DimDate
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Sales QTD = 
+TOTALQTD ( [Total Sales], DimDate[Date] )
+
+// ============================================================================
+// Measure Name: Sales MTD
+// Purpose: Calculate sales mtd for Sales analytics.
+// Business Definition: Month accumulation
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: DimDate
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Sales MTD = 
+TOTALMTD ( [Total Sales], DimDate[Date] )
+
+// ============================================================================
+// Measure Name: Sales Previous Month
+// Purpose: Calculate sales previous month for Sales analytics.
+// Business Definition: Month comparison
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: DimDate
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Sales Previous Month = 
+CALCULATE ( [Total Sales], DATEADD ( DimDate[Date], -1, MONTH ) )
+
+// ============================================================================
+// Measure Name: Sales MoM %
+// Purpose: Calculate sales mom % for Sales analytics.
+// Business Definition: Month-over-month growth
+// Expected Data Type: Percentage
+// Formatting: 0.0%
+// Required Tables: fact_orders_2023 / Dependent Measures
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Sales MoM % = 
+DIVIDE ( [Total Sales] - [Sales Previous Month], [Sales Previous Month] )
+
+// ============================================================================
+// Measure Name: Rolling 3M Sales
+// Purpose: Calculate rolling 3m sales for Sales analytics.
+// Business Definition: Rolling three calendar months
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: DimDate
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Rolling 3M Sales = 
+CALCULATE ( [Total Sales], DATESINPERIOD ( DimDate[Date], MAX ( DimDate[Date] ), -3, MONTH ) )
+
+// ============================================================================
+// Measure Name: Rolling 12M Sales
+// Purpose: Calculate rolling 12m sales for Sales analytics.
+// Business Definition: Limited historical coverage
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: DimDate
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Rolling 12M Sales = 
+CALCULATE ( [Total Sales], DATESINPERIOD ( DimDate[Date], MAX ( DimDate[Date] ), -12, MONTH ) )
+
+// ============================================================================
+// Measure Name: Sales Share %
+// Purpose: Calculate sales share % for Products analytics.
+// Business Definition: Category share respecting external filters
+// Expected Data Type: Percentage
+// Formatting: 0.0%
+// Required Tables: dim_products
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Sales Share % = 
+DIVIDE ( [Total Sales], CALCULATE ( [Total Sales], ALLSELECTED ( dim_products[Product_Category] ) ) )
+

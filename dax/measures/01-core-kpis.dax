@@ -1,0 +1,142 @@
+// ============================================================================
+// ENTERPRISE POWER BI ANALYTICS PORTFOLIO — DAX MEASURE LIBRARY
+// Section: 01 Core Kpis
+// Author: Datta Sable (https://dattasable.com)
+// Source: Datta_Sable_PowerBI_DAX_Visuals_Implementation_Handbook.xlsx
+// ============================================================================
+
+// ============================================================================
+// Measure Name: Total Sales
+// Purpose: Calculate total sales for All analytics.
+// Business Definition: Sales from source fact; reconcile to source total
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: fact_orders_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Total Sales = 
+SUM ( fact_orders_2023[Sales_Amount_USD] )
+
+// ============================================================================
+// Measure Name: Total Cost
+// Purpose: Calculate total cost for Profitability analytics.
+// Business Definition: Costs stored at order level
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: fact_orders_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Total Cost = 
+SUM ( fact_orders_2023[Cost_Amount_USD] )
+
+// ============================================================================
+// Measure Name: Total Profit
+// Purpose: Calculate total profit for All analytics.
+// Business Definition: Compare with Sales minus Cost
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: fact_orders_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Total Profit = 
+SUM ( fact_orders_2023[Profit_Amount_USD] )
+
+// ============================================================================
+// Measure Name: Profit Margin
+// Purpose: Calculate profit margin for All analytics.
+// Business Definition: Use measure, never average row margin
+// Expected Data Type: Percentage
+// Formatting: 0.0%
+// Required Tables: fact_orders_2023 / Dependent Measures
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Profit Margin = 
+DIVIDE ( [Total Profit], [Total Sales] )
+
+// ============================================================================
+// Measure Name: Total Orders
+// Purpose: Calculate total orders for All analytics.
+// Business Definition: Distinct orders; if one row per order equals countrows
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: fact_orders_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Total Orders = 
+DISTINCTCOUNT ( fact_orders_2023[Order_ID] )
+
+// ============================================================================
+// Measure Name: Total Customers
+// Purpose: Calculate total customers for All analytics.
+// Business Definition: Customers with orders in selected period
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: fact_orders_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Total Customers = 
+DISTINCTCOUNT ( fact_orders_2023[Customer_ID] )
+
+// ============================================================================
+// Measure Name: Average Order Value
+// Purpose: Calculate average order value for Sales analytics.
+// Business Definition: Revenue per distinct order
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: fact_orders_2023 / Dependent Measures
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Average Order Value = 
+DIVIDE ( [Total Sales], [Total Orders] )
+
+// ============================================================================
+// Measure Name: Profit per Order
+// Purpose: Calculate profit per order for Profitability analytics.
+// Business Definition: Profit per distinct order
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: fact_orders_2023 / Dependent Measures
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Profit per Order = 
+DIVIDE ( [Total Profit], [Total Orders] )
+
+// ============================================================================
+// Measure Name: Order Rows
+// Purpose: Calculate order rows for Orders analytics.
+// Business Definition: Useful QA against distinct orders
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: fact_orders_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Order Rows = 
+COUNTROWS ( fact_orders_2023 )
+

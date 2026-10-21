@@ -1,0 +1,100 @@
+// ============================================================================
+// ENTERPRISE POWER BI ANALYTICS PORTFOLIO — DAX MEASURE LIBRARY
+// Section: 07 Profitability (Financial Performance & Profit Drivers)
+// Author: Datta Sable (https://dattasable.com)
+// Source: Datta_Sable_PowerBI_DAX_Visuals_Implementation_Handbook.xlsx & PRD Section 6.7
+// ============================================================================
+
+// ============================================================================
+// Measure Name: Gross Profit
+// Purpose: Explicit financial metric for gross operating profit.
+// Business Definition: Total sales revenue less direct order product cost.
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: fact_orders_2023
+// Required Columns: fact_orders_2023[Sales_Amount_USD], fact_orders_2023[Cost_Amount_USD]
+// Filter Context Behavior: Evaluated across any active dimension (Category, Segment, Geography, Date).
+// Recommended Visuals: Waterfall Chart, KPI Card, Gauge.
+// Validation Method: Reconciles to [Total Sales] ($12,840,570.00) - [Total Cost] ($10,529,660.00) = $2,310,910.00.
+// Known Limitations: Represents gross order margin before corporate operating overhead.
+// ============================================================================
+Gross Profit = 
+[Total Sales] - [Total Cost]
+
+// ============================================================================
+// Measure Name: Cost Ratio %
+// Purpose: Evaluates cost proportion relative to gross sales.
+// Business Definition: Percentage of total sales consumed by cost of goods sold.
+// Expected Data Type: Percentage
+// Formatting: 0.0%
+// Required Tables: fact_orders_2023
+// Required Columns: fact_orders_2023[Cost_Amount_USD], fact_orders_2023[Sales_Amount_USD]
+// Filter Context Behavior: Uses safe division against total filtered sales.
+// Recommended Visuals: Gauge, KPI Card, Donut Chart.
+// Validation Method: $10,529,660 / $12,840,570 = 82.003% (Cost Ratio + Profit Margin = 100.0%).
+// Known Limitations: Single-year baseline.
+// ============================================================================
+Cost Ratio % = 
+DIVIDE ( [Total Cost], [Total Sales], 0 )
+
+// ============================================================================
+// Measure Name: Category Profit Share %
+// Purpose: Calculate category contribution to overall company profit.
+// Business Definition: Ratio of category profit to total filtered profit.
+// Expected Data Type: Percentage
+// Formatting: 0.0%
+// Required Tables: dim_products, fact_orders_2023
+// Required Columns: dim_products[Product_Category], fact_orders_2023[Profit_Amount_USD]
+// Filter Context Behavior: Evaluated dynamically over the active filter context, removing filters from Product_Category.
+// Recommended Visuals: 100% Stacked Bar Chart, Treemap, Matrix.
+// Validation Method: Sum of Category Profit Share % across all product categories equals 100.0%.
+// Known Limitations: Dependent on dim_products category hierarchy.
+// ============================================================================
+Category Profit Share % = 
+DIVIDE ( [Total Profit], CALCULATE ( [Total Profit], ALLSELECTED ( dim_products[Product_Category] ) ) )
+
+// ============================================================================
+// Measure Name: Cumulative Profit YTD
+// Purpose: Track year-to-date profit accumulation.
+// Business Definition: Running total of operating profit from the beginning of the calendar year.
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: DimDate, fact_orders_2023
+// Required Columns: DimDate[Date], fact_orders_2023[Profit_Amount_USD]
+// Filter Context Behavior: Requires marked DimDate date table.
+// Recommended Visuals: Area Chart, Line Chart.
+// Validation Method: December 31 cumulative profit equals $2,310,910.00.
+// Known Limitations: Dependent on active calendar relationship.
+// ============================================================================
+Cumulative Profit YTD = 
+TOTALYTD ( [Total Profit], DimDate[Date] )
+
+// ============================================================================
+// Measure Name: Profit PY
+// Purpose: Calculate prior year operating profit for variance comparisons.
+// Business Definition: Operating profit for the corresponding calendar period in the prior year.
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: DimDate, fact_orders_2023
+// Filter Context Behavior: Evaluated via SAMEPERIODLASTYEAR over DimDate[Date].
+// Recommended Visuals: Multi-row Card, Clustered Column Chart with target lines.
+// Validation Method: Requires 2022 historical transactional records; evaluates to BLANK() in single-year 2023 dataset.
+// Known Limitations: In 2023 single-year baseline, prior period is blank.
+// ============================================================================
+Profit PY = 
+CALCULATE ( [Total Profit], SAMEPERIODLASTYEAR ( DimDate[Date] ) )
+
+// ============================================================================
+// Measure Name: Profit YoY %
+// Purpose: Measure year-over-year percentage change in operating profit.
+// Business Definition: Percentage growth or decline in profit compared to the same prior-year period.
+// Expected Data Type: Percentage
+// Formatting: 0.0%
+// Required Tables: DimDate, fact_orders_2023
+// Filter Context Behavior: Safe division between profit delta and prior-year profit.
+// Recommended Visuals: KPI visual with indicator colors, Variance Waterfall.
+// Validation Method: Returns BLANK() when [Profit PY] is not populated.
+// Known Limitations: Requires two or more full years of history.
+// ============================================================================
+Profit YoY % = 
+DIVIDE ( [Total Profit] - [Profit PY], [Profit PY] )

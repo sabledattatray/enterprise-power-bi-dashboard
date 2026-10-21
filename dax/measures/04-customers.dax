@@ -1,0 +1,142 @@
+// ============================================================================
+// ENTERPRISE POWER BI ANALYTICS PORTFOLIO — DAX MEASURE LIBRARY
+// Section: 04 Customers
+// Author: Datta Sable (https://dattasable.com)
+// Source: Datta_Sable_PowerBI_DAX_Visuals_Implementation_Handbook.xlsx
+// ============================================================================
+
+// ============================================================================
+// Measure Name: Customer Master Count
+// Purpose: Calculate customer master count for Customers analytics.
+// Business Definition: All customer master records
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: dim_customers
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Customer Master Count = 
+COUNTROWS ( dim_customers )
+
+// ============================================================================
+// Measure Name: New Customers (flag)
+// Purpose: Calculate new customers (flag) for Customers analytics.
+// Business Definition: Only if Customer_Type is reliable classification; not true first-purchase cohort
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: fact_orders_2023, dim_customers
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+New Customers (flag) = 
+CALCULATE ( DISTINCTCOUNT ( fact_orders_2023[Customer_ID] ), dim_customers[Customer_Type] = "New" )
+
+// ============================================================================
+// Measure Name: Returning Customers (flag)
+// Purpose: Calculate returning customers (flag) for Customers analytics.
+// Business Definition: Validate category labels
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: fact_orders_2023, dim_customers
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Returning Customers (flag) = 
+CALCULATE ( DISTINCTCOUNT ( fact_orders_2023[Customer_ID] ), dim_customers[Customer_Type] = "Returning" )
+
+// ============================================================================
+// Measure Name: Orders per Customer
+// Purpose: Calculate orders per customer for Customers analytics.
+// Business Definition: Purchase frequency
+// Expected Data Type: Decimal Number
+// Formatting: 0.00
+// Required Tables: fact_orders_2023 / Dependent Measures
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Orders per Customer = 
+DIVIDE ( [Total Orders], [Total Customers] )
+
+// ============================================================================
+// Measure Name: Revenue per Customer
+// Purpose: Calculate revenue per customer for Customers analytics.
+// Business Definition: Observed revenue, not predictive lifetime value
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: fact_orders_2023 / Dependent Measures
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Revenue per Customer = 
+DIVIDE ( [Total Sales], [Total Customers] )
+
+// ============================================================================
+// Measure Name: Customer Share %
+// Purpose: Calculate customer share % for Customers analytics.
+// Business Definition: Segment customer mix
+// Expected Data Type: Percentage
+// Formatting: 0.0%
+// Required Tables: dim_customers
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Customer Share % = 
+DIVIDE ( [Total Customers], CALCULATE ( [Total Customers], ALLSELECTED ( dim_customers[Customer_Segment] ) ) )
+
+// ============================================================================
+// Measure Name: Repeat Customer Count
+// Purpose: Calculate repeat customer count for Customers analytics.
+// Business Definition: Customers with >1 order in selected period
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: fact_orders_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Repeat Customer Count = 
+COUNTROWS ( FILTER ( VALUES ( fact_orders_2023[Customer_ID] ), CALCULATE ( DISTINCTCOUNT ( fact_orders_2023[Order_ID] ) ) > 1 ) )
+
+// ============================================================================
+// Measure Name: Repeat Customer Rate
+// Purpose: Calculate repeat customer rate for Customers analytics.
+// Business Definition: Transaction-derived repeat rate
+// Expected Data Type: Percentage
+// Formatting: 0.0%
+// Required Tables: fact_orders_2023 / Dependent Measures
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Repeat Customer Rate = 
+DIVIDE ( [Repeat Customer Count], [Total Customers] )
+
+// ============================================================================
+// Measure Name: Customer Revenue Rank
+// Purpose: Calculate customer revenue rank for Customers analytics.
+// Business Definition: Names may not be unique; rank Customer_ID for production
+// Expected Data Type: Decimal Number
+// Formatting: 0
+// Required Tables: dim_customers
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Customer Revenue Rank = 
+RANKX ( ALLSELECTED ( dim_customers[Customer_Name] ), [Total Sales], , DESC, DENSE )
+

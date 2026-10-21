@@ -1,0 +1,127 @@
+// ============================================================================
+// ENTERPRISE POWER BI ANALYTICS PORTFOLIO — DAX MEASURE LIBRARY
+// Section: 09 Forecast
+// Author: Datta Sable (https://dattasable.com)
+// Source: Datta_Sable_PowerBI_DAX_Visuals_Implementation_Handbook.xlsx
+// ============================================================================
+
+// ============================================================================
+// Measure Name: Forecast Sales
+// Purpose: Calculate forecast sales for Forecast analytics.
+// Business Definition: 2024 forecast only
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: fact_forecast_2024
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Forecast Sales = 
+SUM ( fact_forecast_2024[Forecast_Sales_USD] )
+
+// ============================================================================
+// Measure Name: Forecast Orders
+// Purpose: Calculate forecast orders for Forecast analytics.
+// Business Definition: 2024 projected orders
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: fact_forecast_2024
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Forecast Orders = 
+SUM ( fact_forecast_2024[Forecast_Orders] )
+
+// ============================================================================
+// Measure Name: Forecast Profit
+// Purpose: Calculate forecast profit for Forecast analytics.
+// Business Definition: 2024 projected profit
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: fact_forecast_2024
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Forecast Profit = 
+SUM ( fact_forecast_2024[Forecast_Profit_USD] )
+
+// ============================================================================
+// Measure Name: Forecast Margin
+// Purpose: Calculate forecast margin for Forecast analytics.
+// Business Definition: Weighted, not average of monthly margins
+// Expected Data Type: Percentage
+// Formatting: 0.0%
+// Required Tables: fact_orders_2023 / Dependent Measures
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Forecast Margin = 
+DIVIDE ( [Forecast Profit], [Forecast Sales] )
+
+// ============================================================================
+// Measure Name: Forecast Sales Lower 95
+// Purpose: Calculate forecast sales lower 95 for Forecast analytics.
+// Business Definition: Sum interval bounds only as an illustrative aggregate
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: fact_forecast_2024
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Forecast Sales Lower 95 = 
+SUM ( fact_forecast_2024[Sales_Lower_95_USD] )
+
+// ============================================================================
+// Measure Name: Forecast Sales Upper 95
+// Purpose: Calculate forecast sales upper 95 for Forecast analytics.
+// Business Definition: Aggregate intervals not statistically guaranteed 95%
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: fact_forecast_2024
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Forecast Sales Upper 95 = 
+SUM ( fact_forecast_2024[Sales_Upper_95_USD] )
+
+// ============================================================================
+// Measure Name: Forecast Return Rate (weighted)
+// Purpose: Calculate forecast return rate (weighted) for Forecast analytics.
+// Business Definition: If CSV percentage values are 0-100, divide numerator by 100
+// Expected Data Type: Percentage
+// Formatting: 0.0%
+// Required Tables: fact_forecast_2024
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Forecast Return Rate (weighted) = 
+DIVIDE ( SUMX ( fact_forecast_2024, fact_forecast_2024[Forecast_Orders] * fact_forecast_2024[Forecast_Return_Rate_Pct] ), [Forecast Orders] )
+
+// ============================================================================
+// Measure Name: Forecast Q1 Sales
+// Purpose: Calculate forecast q1 sales for Forecast analytics.
+// Business Definition: Q1 2024
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: fact_forecast_2024
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Forecast Q1 Sales = 
+CALCULATE ( [Forecast Sales], FILTER ( ALL ( fact_forecast_2024[Forecast_Month] ), fact_forecast_2024[Forecast_Month] >= DATE ( 2024, 1, 1 ) && fact_forecast_2024[Forecast_Month] < DATE ( 2024, 4, 1 ) ) )
+

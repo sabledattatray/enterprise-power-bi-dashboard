@@ -1,0 +1,29 @@
+// ============================================================================
+// ENTERPRISE POWER BI ANALYTICS PORTFOLIO — CALENDAR DATE TABLE
+// Author: Datta Sable (https://dattasable.com)
+// Description: Complete DAX calendar dimension spanning 2023-01-01 to 2024-12-31
+// Instructions:
+// 1. In Power BI Modeling tab, select "New Table" and paste this code.
+// 2. Right-click DimDate > "Mark as date table", select [Date] as the unique column.
+// 3. Sort [Month] by [Month No], and sort [Year Month] by [Year Month Sort].
+// 4. Create single-direction 1:* relationships:
+//    - DimDate[Date] 1 -> * fact_orders_2023[Order_Date] (Active)
+//    - DimDate[Date] 1 -> * fact_orders_2023[Delivery_Date] (Inactive)
+//    - DimDate[Date] 1 -> * fact_returns_2023[Return_Date] (Inactive / Active via Date bridge)
+//    - DimDate[Date] 1 -> * fact_forecast_2024[Forecast_Month]
+// ============================================================================
+
+DimDate = 
+ADDCOLUMNS (
+    CALENDAR ( DATE ( 2023, 1, 1 ), DATE ( 2024, 12, 31 ) ),
+    "Year", YEAR ( [Date] ),
+    "Month No", MONTH ( [Date] ),
+    "Month", FORMAT ( [Date], "MMM" ),
+    "Year Month", FORMAT ( [Date], "YYYY-MM" ),
+    "Quarter", "Q" & FORMAT ( [Date], "Q" ),
+    "Quarter Year", "Q" & FORMAT ( [Date], "Q" ) & " " & YEAR ( [Date] ),
+    "Day of Week", FORMAT ( [Date], "dddd" ),
+    "Day No", WEEKDAY ( [Date], 2 ),
+    "Is Weekend", IF ( WEEKDAY ( [Date], 2 ) IN { 6, 7 }, "Weekend", "Weekday" ),
+    "Year Month Sort", YEAR ( [Date] ) * 100 + MONTH ( [Date] )
+)

@@ -1,6 +1,12 @@
-MIT License
+# Licensing & Attribution
 
-Copyright (c) 2026 Datta Sable
+This repository operates under a dual-licensing model to protect code, documentation, synthetic datasets, and design assets appropriately.
+
+---
+
+## 1. Code, Scripts, and Automation (MIT License)
+
+Copyright (c) 2024 Datta Sable (https://dattasable.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +25,27 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+## 2. Documentation, Datasets, and Design Assets (Creative Commons Attribution 4.0 International)
+
+The technical documentation, data dictionary, Excel implementation handbook, synthetic datasets, DAX libraries, dashboard design references, and SVG icons in this repository are licensed under the **Creative Commons Attribution 4.0 International License (CC BY 4.0)**.
+
+To view a copy of this license, visit:
+https://creativecommons.org/licenses/by/4.0/
+
+You are free to:
+- **Share** — copy and redistribute the material in any medium or format.
+- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially.
+
+Under the following terms:
+- **Attribution** — You must give appropriate credit to **Datta Sable (https://dattasable.com)**, provide a link to the license, and indicate if changes were made.
+
+---
+
+## 3. Disclaimers & Trademarks
+
+- **Microsoft Trademark Notice:** This project is an independent educational and portfolio demonstration. It is not affiliated with, sponsored by, or endorsed by Microsoft Corporation. *Microsoft Power BI*, *Microsoft Fabric*, *Power Query*, *DAX*, and *Excel* are trademarks or registered trademarks of Microsoft Corporation in the United States and/or other countries.
+- **Synthetic Data Notice:** All transactional records, customer names, addresses, and order histories included in this repository are purely synthetic demonstration data generated for analytics modeling. Any resemblance to real persons, living or dead, or actual commercial transactions is entirely coincidental.
+- **Design Mockup Notice:** Dashboard images provided in this repository represent proposed UI/UX design mockups and reference architecture.

@@ -1,0 +1,101 @@
+Customer_ID,Customer_Name,Customer_Segment,Age_Group,Acquisition_Channel,Customer_Type
+C000001,Customer 000001,Corporate,18-24,Organic Search,New
+C000002,Customer 000002,Consumer,25-34,Email,New
+C000003,Customer 000003,Home Office,25-34,Referral,New
+C000004,Customer 000004,Consumer,65+,Social,New
+C000005,Customer 000005,Corporate,45-54,Organic Search,New
+C000006,Customer 000006,Consumer,35-44,Direct,New
+C000007,Customer 000007,Corporate,35-44,Referral,New
+C000008,Customer 000008,Corporate,25-34,Social,New
+C000009,Customer 000009,Consumer,25-34,Email,New
+C000010,Customer 000010,Corporate,35-44,Email,New
+C000011,Customer 000011,Home Office,45-54,Direct,New
+C000012,Customer 000012,Home Office,35-44,Paid Search,New
+C000013,Customer 000013,Corporate,55-64,Email,New
+C000014,Customer 000014,Consumer,18-24,Direct,New
+C000015,Customer 000015,Consumer,18-24,Direct,New
+C000016,Customer 000016,Corporate,25-34,Social,New
+C000017,Customer 000017,Consumer,35-44,Referral,New
+C000018,Customer 000018,Consumer,35-44,Organic Search,New
+C000019,Customer 000019,Consumer,25-34,Referral,New
+C000020,Customer 000020,Consumer,45-54,Referral,New
+C000021,Customer 000021,Consumer,55-64,Paid Search,New
+C000022,Customer 000022,Corporate,18-24,Direct,New
+C000023,Customer 000023,Consumer,35-44,Paid Search,New
+C000024,Customer 000024,Consumer,35-44,Direct,New
+C000025,Customer 000025,Consumer,35-44,Referral,New
+C000026,Customer 000026,Consumer,35-44,Organic Search,New
+C000027,Customer 000027,Corporate,35-44,Paid Search,New
+C000028,Customer 000028,Home Office,35-44,Organic Search,New
+C000029,Customer 000029,Small Business,45-54,Direct,New
+C000030,Customer 000030,Consumer,45-54,Social,New
+C000031,Customer 000031,Corporate,25-34,Paid Search,New
+C000032,Customer 000032,Home Office,25-34,Social,New
+C000033,Customer 000033,Corporate,25-34,Referral,New
+C000034,Customer 000034,Consumer,35-44,Referral,New
+C000035,Customer 000035,Corporate,45-54,Referral,New
+C000036,Customer 000036,Consumer,25-34,Organic Search,New
+C000037,Customer 000037,Corporate,35-44,Social,New
+C000038,Customer 000038,Corporate,25-34,Social,New
+C000039,Customer 000039,Corporate,55-64,Social,New
+C000040,Customer 000040,Corporate,45-54,Social,New
+C000041,Customer 000041,Corporate,18-24,Paid Search,New
+C000042,Customer 000042,Home Office,45-54,Organic Search,New
+C000043,Customer 000043,Home Office,35-44,Paid Search,New
+C000044,Customer 000044,Consumer,35-44,Organic Search,New
+C000045,Customer 000045,Consumer,35-44,Organic Search,New
+C000046,Customer 000046,Home Office,45-54,Social,New
+C000047,Customer 000047,Consumer,25-34,Organic Search,New
+C000048,Customer 000048,Corporate,55-64,Social,New
+C000049,Customer 000049,Consumer,35-44,Paid Search,New
+C000050,Customer 000050,Corporate,65+,Social,New
+C000051,Customer 000051,Home Office,35-44,Email,New
+C000052,Customer 000052,Consumer,25-34,Social,New
+C000053,Customer 000053,Corporate,65+,Referral,New
+C000054,Customer 000054,Corporate,18-24,Paid Search,New
+C000055,Customer 000055,Corporate,25-34,Social,New
+C000056,Customer 000056,Consumer,65+,Email,New
+C000057,Customer 000057,Corporate,35-44,Direct,New
+C000058,Customer 000058,Corporate,35-44,Social,New
+C000059,Customer 000059,Corporate,35-44,Direct,New
+C000060,Customer 000060,Corporate,45-54,Email,New
+C000061,Customer 000061,Home Office,35-44,Paid Search,New
+C000062,Customer 000062,Corporate,45-54,Social,New
+C000063,Customer 000063,Home Office,18-24,Paid Search,New
+C000064,Customer 000064,Consumer,25-34,Organic Search,New
+C000065,Customer 000065,Home Office,35-44,Paid Search,New
+C000066,Customer 000066,Corporate,35-44,Paid Search,New
+C000067,Customer 000067,Small Business,25-34,Organic Search,New
+C000068,Customer 000068,Consumer,35-44,Referral,New
+C000069,Customer 000069,Consumer,35-44,Organic Search,New
+C000070,Customer 000070,Consumer,55-64,Organic Search,New
+C000071,Customer 000071,Small Business,35-44,Direct,New
+C000072,Customer 000072,Consumer,25-34,Social,New
+C000073,Customer 000073,Corporate,45-54,Organic Search,New
+C000074,Customer 000074,Home Office,35-44,Referral,New
+C000075,Customer 000075,Corporate,65+,Organic Search,New
+C000076,Customer 000076,Consumer,45-54,Paid Search,New
+C000077,Customer 000077,Home Office,25-34,Paid Search,New
+C000078,Customer 000078,Consumer,35-44,Email,New
+C000079,Customer 000079,Consumer,25-34,Paid Search,New
+C000080,Customer 000080,Consumer,18-24,Organic Search,New
+C000081,Customer 000081,Consumer,25-34,Social,New
+C000082,Customer 000082,Consumer,18-24,Email,New
+C000083,Customer 000083,Corporate,45-54,Organic Search,New
+C000084,Customer 000084,Consumer,65+,Organic Search,New
+C000085,Customer 000085,Corporate,35-44,Paid Search,New
+C000086,Customer 000086,Consumer,45-54,Paid Search,New
+C000087,Customer 000087,Corporate,35-44,Organic Search,New
+C000088,Customer 000088,Consumer,55-64,Referral,New
+C000089,Customer 000089,Consumer,35-44,Organic Search,New
+C000090,Customer 000090,Consumer,35-44,Organic Search,New
+C000091,Customer 000091,Corporate,55-64,Organic Search,New
+C000092,Customer 000092,Corporate,45-54,Direct,New
+C000093,Customer 000093,Consumer,25-34,Social,New
+C000094,Customer 000094,Corporate,25-34,Social,New
+C000095,Customer 000095,Consumer,25-34,Referral,New
+C000096,Customer 000096,Consumer,25-34,Social,New
+C000097,Customer 000097,Consumer,45-54,Email,New
+C000098,Customer 000098,Consumer,45-54,Direct,New
+C000099,Customer 000099,Small Business,35-44,Paid Search,New
+C000100,Customer 000100,Home Office,35-44,Referral,New

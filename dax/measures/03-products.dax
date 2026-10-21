@@ -1,0 +1,112 @@
+// ============================================================================
+// ENTERPRISE POWER BI ANALYTICS PORTFOLIO — DAX MEASURE LIBRARY
+// Section: 03 Products
+// Author: Datta Sable (https://dattasable.com)
+// Source: Datta_Sable_PowerBI_DAX_Visuals_Implementation_Handbook.xlsx
+// ============================================================================
+
+// ============================================================================
+// Measure Name: Total Products
+// Purpose: Calculate total products for Products analytics.
+// Business Definition: Product catalog size
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: dim_products
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Total Products = 
+DISTINCTCOUNT ( dim_products[Product_ID] )
+
+// ============================================================================
+// Measure Name: Products Sold
+// Purpose: Calculate products sold for Products analytics.
+// Business Definition: Distinct products with sales
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: fact_orders_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Products Sold = 
+DISTINCTCOUNT ( fact_orders_2023[Product_ID] )
+
+// ============================================================================
+// Measure Name: Units Sold
+// Purpose: Calculate units sold for Products analytics.
+// Business Definition: Units sold
+// Expected Data Type: Integer
+// Formatting: #,##0
+// Required Tables: fact_orders_2023
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Units Sold = 
+SUM ( fact_orders_2023[Quantity] )
+
+// ============================================================================
+// Measure Name: Average Unit Selling Price
+// Purpose: Calculate average unit selling price for Products analytics.
+// Business Definition: Do not confuse with average order value
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: fact_orders_2023 / Dependent Measures
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Average Unit Selling Price = 
+DIVIDE ( [Total Sales], [Units Sold] )
+
+// ============================================================================
+// Measure Name: Profit per Unit
+// Purpose: Calculate profit per unit for Products analytics.
+// Business Definition: Unit economics
+// Expected Data Type: Currency
+// Formatting: $#,##0.00
+// Required Tables: fact_orders_2023 / Dependent Measures
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Profit per Unit = 
+DIVIDE ( [Total Profit], [Units Sold] )
+
+// ============================================================================
+// Measure Name: Product Sales Rank
+// Purpose: Calculate product sales rank for Products analytics.
+// Business Definition: Use Top N visual filter
+// Expected Data Type: Decimal Number
+// Formatting: 0
+// Required Tables: dim_products
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Product Sales Rank = 
+RANKX ( ALLSELECTED ( dim_products[Product_Name] ), [Total Sales], , DESC, DENSE )
+
+// ============================================================================
+// Measure Name: Product Profit Rank
+// Purpose: Calculate product profit rank for Profitability analytics.
+// Business Definition: Top profit products
+// Expected Data Type: Decimal Number
+// Formatting: 0
+// Required Tables: dim_products
+// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
+// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
+// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
+// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// ============================================================================
+Product Profit Rank = 
+RANKX ( ALLSELECTED ( dim_products[Product_Name] ), [Total Profit], , DESC, DENSE )
+
