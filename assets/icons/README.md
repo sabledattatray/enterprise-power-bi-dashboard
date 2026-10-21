@@ -1,6 +1,6 @@
 # Professional SVG Icon Library
 
-This directory contains a curated library of **62 vector SVG icons** designed for modern Microsoft Power BI dashboards. Every icon has been formatted for crisp display on high-DPI displays, standard 16:9 canvas resolutions, and mobile layouts.
+This directory contains a curated library of **85 vector SVG icons** across 12 business categories designed for modern Microsoft Power BI dashboards. Every icon has been formatted for crisp display on high-DPI displays, standard 16:9 canvas resolutions, and mobile layouts.
 
 ---
 
@@ -91,6 +91,16 @@ This directory contains a curated library of **62 vector SVG icons** designed fo
 | ![Package Check](regions/package-check.svg) | [`package-check.svg`](regions/package-check.svg) | 20px / 24px | `#2563EB` / `#1E293B` | Visual indicator for package check |
 | ![Shipping](regions/shipping.svg) | [`shipping.svg`](regions/shipping.svg) | 20px / 24px | `#2563EB` / `#1E293B` | Visual indicator for shipping |
 | ![Store](regions/store.svg) | [`store.svg`](regions/store.svg) | 20px / 24px | `#2563EB` / `#1E293B` | Visual indicator for store |
+ 
+---
+
+## Product Catalog & Inventory (3 icons)
+
+| Icon | File Name | Recommended Size | Recommended Color | Usage Description |
+|:---:|---|:---:|---|---|
+| ![Box](products/box.svg) | [`box.svg`](products/box.svg) | 20px / 24px | `#2563EB` / `#1E293B` | Product SKU package and physical unit visual |
+| ![Diamond](products/diamond.svg) | [`diamond.svg`](products/diamond.svg) | 20px / 24px | `#2563EB` / `#1E293B` | Premium / luxury product tier indicator |
+| ![Package Check](products/package-check.svg) | [`package-check.svg`](products/package-check.svg) | 20px / 24px | `#2563EB` / `#1E293B` | Verified product inventory and fulfillment status |
 
 ---
 
@@ -173,7 +183,7 @@ This directory contains a curated library of **62 vector SVG icons** designed fo
 
 ---
 
-## Total Vector Assets: 82 Icons
+## Total Vector Assets: 85 Icons across 12 Categories
 
 ### How to Use SVG Icons in Power BI
 

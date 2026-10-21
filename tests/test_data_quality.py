@@ -37,6 +37,31 @@ class TestDataQuality(unittest.TestCase):
         self.assertEqual(months[0], '2024-01-01')
         self.assertEqual(months[-1], '2024-12-01')
 
+    def test_forecast_scenario_bounds(self):
+        """Forecast scenario bounds must equal exactly Baseline * 0.88 and Baseline * 1.12."""
+        for _, row in self.forecast.iterrows():
+            baseline = row['Forecast_Sales_USD']
+            lower = row['Sales_Lower_95_USD']
+            upper = row['Sales_Upper_95_USD']
+            self.assertAlmostEqual(lower, baseline * 0.88, places=2)
+            self.assertAlmostEqual(upper, baseline * 1.12, places=2)
+
+    def test_record_counts_consistency(self):
+        """Total records across all 5 tables must equal exactly 231,130."""
+        total_rows = (
+            len(self.orders) +
+            len(self.customers) +
+            len(self.products) +
+            len(self.returns) +
+            len(self.forecast)
+        )
+        self.assertEqual(len(self.orders), 178200)
+        self.assertEqual(len(self.customers), 46798)
+        self.assertEqual(len(self.products), 320)
+        self.assertEqual(len(self.returns), 5800)
+        self.assertEqual(len(self.forecast), 12)
+        self.assertEqual(total_rows, 231130)
+
     def test_positive_pricing_and_quantities(self):
         """Orders must have positive quantities and selling prices."""
         self.assertTrue((self.orders['Quantity'] > 0).all())
