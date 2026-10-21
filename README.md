@@ -34,7 +34,7 @@ Built on an end-to-end relational retail dataset of **231,130 records across 5 t
 Welcome! If you discovered this project via LinkedIn, here is everything you need in one place:
 
 - 📊 **Explore Dashboard Designs:** View the [9-Page Visual Gallery](#-9-page-dashboard-gallery) below, with each page linking to its visual build matrix.
-- 💾 **Download the Clean Data:** Access the [5 relational CSV files in `data/raw/`](data/raw/) or download the ready-to-import [ZIP Release Pack](https://github.com/dattasable/enterprise-powerbi-analytics-dashboard/releases).
+- 💾 **Download the Clean Data:** Access the [5 relational CSV files in `data/raw/`](data/raw/) or download the ready-to-import [ZIP Release Pack](https://github.com/sabledattatray/enterprise-power-bi-dashboard/releases).
 - 📐 **Copy Verified DAX Measures:** Browse [66 ready-to-copy DAX formulas](dax/) with business definitions and formatting rules.
 - 📘 **Review the Excel Handbook:** Inspect [`excel/powerbi-implementation-handbook.xlsx`](excel/powerbi-implementation-handbook.xlsx) containing the data dictionary, relationships, and visual build matrices.
 - 🎨 **Grab Vector SVG Icons:** Download [62 custom SVG icons](assets/icons/) for navigation buttons and KPI cards.
@@ -45,7 +45,7 @@ Welcome! If you discovered this project via LinkedIn, here is everything you nee
 Excited to share the Enterprise Power BI Analytics Portfolio by Datta Sable! 🚀
 Features 9 multi-page dashboard designs, a 231,130-row relational retail dataset ($12.84M sales), 66 DAX measures, star-schema modeling, and a 62-piece SVG icon library. Fully reproducible and open-source!
 
-Check it out: https://github.com/dattasable/enterprise-powerbi-analytics-dashboard
+Check it out: https://github.com/sabledattatray/enterprise-power-bi-dashboard
 Portfolio: https://dattasable.com
 ```
 
@@ -252,7 +252,7 @@ All 24 automated unit tests execute in under 4 seconds, verifying schema integri
 
 ## 📦 Downloadable Resource Packs (Release v1.0.0)
 
-Pre-packaged ZIP archives are available under [Releases](https://github.com/dattasable/enterprise-powerbi-analytics-dashboard/releases):
+Pre-packaged ZIP archives are available under [Releases](https://github.com/sabledattatray/enterprise-power-bi-dashboard/releases):
 - 📁 **Complete Datasets Pack:** All 5 relational CSV files + Data Dictionary.
 - 🎨 **SVG Vector Icon Pack:** 62 clean SVG icons categorized by navigation, KPIs, and charts.
 - 🖼️ **Dashboard Design Pack:** All 9 high-resolution dashboard mockups in lossless PNG and WebP.

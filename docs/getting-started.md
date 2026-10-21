@@ -23,8 +23,8 @@ Download and install the official Microsoft Power BI Desktop application from th
 
 ### Step 2: Clone or Download the Repository
 ```bash
-git clone https://github.com/dattasable/enterprise-powerbi-analytics-dashboard.git
-cd enterprise-powerbi-analytics-dashboard
+git clone https://github.com/sabledattatray/enterprise-power-bi-dashboard.git
+cd enterprise-power-bi-dashboard
 ```
 
 ### Step 3: Inspect Data Assets
