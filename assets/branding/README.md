@@ -8,8 +8,9 @@ This directory contains the authentic visual brand assets for **Datta Sable** us
 
 | Asset | Preview | Format | Purpose | File Path |
 |---|---|---|---|---|
-| Datta Sable Monogram | ![Monogram](datta-sable-monogram.svg) | SVG | Primary personal brand mark | [`assets/branding/datta-sable-monogram.svg`](datta-sable-monogram.svg) |
-| Standard Logo Mark | ![Logo](logo.svg) | SVG | Navigation header mark | [`assets/branding/logo.svg`](logo.svg) |
+| Datta Sable Monogram | ![Monogram](datta-sable-monogram.svg) | SVG | Primary executive brand mark | [`assets/branding/datta-sable-monogram.svg`](datta-sable-monogram.svg) |
+| Brand Header Logo | ![Logo](logo.svg) | SVG | Navigation header & title brand mark | [`assets/branding/logo.svg`](logo.svg) |
+| Executive Analytics Emblem | ![Badge](premium-badge.svg) | SVG | Premium quality verification badge | [`assets/branding/premium-badge.svg`](premium-badge.svg) |
 
 ---
 

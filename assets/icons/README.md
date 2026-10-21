@@ -169,10 +169,11 @@ This directory contains a curated library of **62 vector SVG icons** designed fo
 | ![Search](ui/search.svg) | [`search.svg`](ui/search.svg) | 20px / 24px | `#2563EB` / `#1E293B` | Visual indicator for search |
 | ![Settings](ui/settings.svg) | [`settings.svg`](ui/settings.svg) | 20px / 24px | `#2563EB` / `#1E293B` | Visual indicator for settings |
 | ![Website](ui/website.svg) | [`website.svg`](ui/website.svg) | 20px / 24px | `#2563EB` / `#1E293B` | Visual indicator for website |
+| ![Executive Emblem](ui/premium-badge.svg) | [`premium-badge.svg`](ui/premium-badge.svg) | 24px / 32px | `#F59E0B` / `#38BDF8` | Executive analytics quality certification badge |
 
 ---
 
-## Total Vector Assets: 81 Icons
+## Total Vector Assets: 82 Icons
 
 ### How to Use SVG Icons in Power BI
 
