@@ -72,7 +72,7 @@ Reviewing this project takes approximately five minutes. Here is the suggested e
 Welcome! If you discovered this project via LinkedIn, here is everything you need in one place:
 
 - 📊 **Explore Dashboard Designs:** View the [9-Page Visual Gallery](#️-9-page-dashboard-gallery) below, with each page linking to its visual build matrix.
-- 💾 **Download Clean Datasets:** Access the [5 relational CSV files in `data/raw/`](data/raw/) or download the [Release v1.0.0 Datasets ZIP Pack](releases/v1.0.0/enterprise-powerbi-datasets-v1.0.0.zip).
+- 💾 **Download Clean Datasets:** Access the [5 relational CSV files in `data/raw/`](data/raw/) or download the [Release v1.0.0 Datasets ZIP Pack](https://github.com/sabledattatray/enterprise-power-bi-dashboard/releases).
 - 📐 **Copy Verified DAX Measures:** Browse [66 ready-to-copy DAX formulas](dax/) with business definitions, filter context rules, and formatting standards.
 - 📘 **Review the Excel Handbook:** Inspect [`excel/powerbi-implementation-handbook.xlsx`](excel/powerbi-implementation-handbook.xlsx) containing data dictionaries, relationships, and visual build matrices.
 - 🎨 **Grab Vector SVG Icons:** Download [85 custom SVG icons across 12 categories](assets/icons/) for navigation bars and KPI cards.

@@ -47,6 +47,10 @@ def validate_links():
                     # Remove query params if any
                     clean_link = clean_link.split('?')[0]
 
+                    # Skip binary archive packages (generated dynamically or hosted on GitHub Releases)
+                    if clean_link.endswith(('.zip', '.tar.gz', '.tgz')):
+                        continue
+
                     target_path = os.path.normpath(os.path.join(root, clean_link))
                     checked_count += 1
 
