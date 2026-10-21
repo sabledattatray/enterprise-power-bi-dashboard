@@ -48,6 +48,7 @@ desktop.ini
 *.sublime-workspace
 
 # Large archives (local release builds, not source)
-releases/
+releases/*.zip
+releases/**/*.zip
 dist_packages/
 scratch/

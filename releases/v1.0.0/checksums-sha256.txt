@@ -1,0 +1,5 @@
+a4ae7dcc5259567ba96cacf1949bb7da936f1379aa632f88c1888735e75ddafd  enterprise-powerbi-complete-resources-v1.0.0.zip
+f98b6fa1dc49f76546b44da9395e8eef1f903b03e5ea97747c81439086bbc00e  enterprise-powerbi-dashboard-designs-v1.0.0.zip
+a5b546331e465b5a68c63b1b121991f9def6d69ec04f66c1a7af94222d6b5b05  enterprise-powerbi-datasets-v1.0.0.zip
+18ce874ffacc5789dd1968cb38c7b03e0e043a45bc9fb243027cb3f578b9a73b  enterprise-powerbi-dax-handbook-v1.0.0.zip
+4f5e1e6d1b34e7c6795021e24e2e5f986f0a40d8459c619c1dfef7b9e4443961  enterprise-powerbi-svg-icons-v1.0.0.zip
