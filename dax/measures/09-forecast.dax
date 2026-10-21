@@ -67,30 +67,32 @@ DIVIDE ( [Forecast Profit], [Forecast Sales] )
 
 // ============================================================================
 // Measure Name: Forecast Sales Lower 95
-// Purpose: Calculate forecast sales lower 95 for Forecast analytics.
-// Business Definition: Sum interval bounds only as an illustrative aggregate
+// Purpose: Aggregates the illustrative lower scenario bound (conservative -12% planning band).
+// Business Definition: Illustrative conservative revenue projection (Baseline Sales * 0.88). Note: Column header retains legacy 'Lower_95' name for schema compatibility, but represents a deterministic managerial scenario rather than an econometric Gaussian confidence interval.
 // Expected Data Type: Currency
 // Formatting: $#,##0.00
 // Required Tables: fact_forecast_2024
-// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
-// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
-// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
-// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// Required Columns: fact_forecast_2024[Sales_Lower_95_USD]
+// Filter Context Behavior: Evaluated dynamically over the active forecast calendar periods.
+// Recommended Visuals: Line Chart with shaded scenario band, Matrix.
+// Validation Method: Reconciles to $13,062,455.04 full-year total ($14,843,698.91 * 0.88).
+// Known Limitations: Company-level monthly grain; not segmented by SKU or customer.
 // ============================================================================
 Forecast Sales Lower 95 = 
 SUM ( fact_forecast_2024[Sales_Lower_95_USD] )
 
 // ============================================================================
 // Measure Name: Forecast Sales Upper 95
-// Purpose: Calculate forecast sales upper 95 for Forecast analytics.
-// Business Definition: Aggregate intervals not statistically guaranteed 95%
+// Purpose: Aggregates the illustrative upper scenario bound (optimistic +12% planning band).
+// Business Definition: Illustrative optimistic revenue projection (Baseline Sales * 1.12). Note: Column header retains legacy 'Upper_95' name for schema compatibility, but represents a deterministic managerial scenario rather than an econometric Gaussian confidence interval.
 // Expected Data Type: Currency
 // Formatting: $#,##0.00
 // Required Tables: fact_forecast_2024
-// Filter Context Behavior: Evaluated dynamically over the active filter context (Date, Region, Category, Customer Segment).
-// Recommended Visuals: Card, KPI, Line Chart, Clustered Bar/Column Chart, Matrix.
-// Validation Method: Reconcile against source table aggregations and validation suite in scripts/validate_data.py.
-// Known Limitations: Single-year transactional baseline (2023); prior year comparisons require 2022 data.
+// Required Columns: fact_forecast_2024[Sales_Upper_95_USD]
+// Filter Context Behavior: Evaluated dynamically over the active forecast calendar periods.
+// Recommended Visuals: Line Chart with shaded scenario band, Matrix.
+// Validation Method: Reconciles to $16,624,942.78 full-year total ($14,843,698.91 * 1.12).
+// Known Limitations: Company-level monthly grain; not segmented by SKU or customer.
 // ============================================================================
 Forecast Sales Upper 95 = 
 SUM ( fact_forecast_2024[Sales_Upper_95_USD] )

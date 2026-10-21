@@ -28,3 +28,20 @@ This document provides transparent documentation regarding dataset scope, modeli
 - **Order-Level Granularity:** Each order row represents a single product line item. Complex multi-line shopping baskets are not modeled in the current schema.
 - **Macro-Level Forecast:** The 2024 forecast is aggregated at the company-wide monthly level. It does not provide SKU-level or state-level predictive models.
 - **Return Financials:** Return cases represent separate post-purchase operational events. Refund amounts (`$213,726.90`) are recorded separately in `fact_returns_2023` and are not retroactively deducted from gross order sales.
+
+---
+
+## 4. Forecasting Methodology & Scenario Planning Bands
+
+- **Illustrative Planning Assumptions:** The 2024 forecast dataset provides a monthly baseline projection ($14.84M total) and fixed scenario bands:
+  - *Conservative Scenario Bound:* `Baseline Forecast * 0.88` (-12%)
+  - *Optimistic Scenario Bound:* `Baseline Forecast * 1.12` (+12%)
+- **Statistical Boundary:** These scenario bounds are planning sensitivity assumptions designed for executive scenario modeling; they do **not** represent statistically estimated confidence intervals (e.g., ARIMA or Gaussian confidence intervals).
+
+---
+
+## 5. Financial Semantics & Cost Classifications
+
+- **Direct Merchandise Cost (COGS):** `Cost_Amount_USD` represents direct manufacturer procurement cost.
+- **Gross Operating Profit:** `Profit_Amount_USD` reflects merchandise gross margin (`Sales - Cost`) before corporate SG&A overhead, marketing customer acquisition cost (CAC), logistics overhead, taxes, or capital depreciation.
+- **Refund Liabilities:** Product returns generate an operational refund liability of `$213,726.90` (5,800 return records), audited independently in `fact_returns_2023`.

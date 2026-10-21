@@ -11,7 +11,7 @@ Support executive planning, capacity budgeting, and revenue goal tracking for ca
 
 ## 2. Executive Questions Answered
 - What is our projected annual revenue, order volume, and profit for 2024?
-- What are the 95% confidence intervals (optimistic vs conservative bounds)?
+- What are the planning scenario ranges (conservative -12% vs optimistic +12% bounds)?
 - How will seasonal holiday peaks impact Q4 inventory and warehouse capacity?
 - What is the expected operating margin expansion across the 2024 forecast period?
 - What return rate expectations should customer operations budget for?
@@ -32,8 +32,8 @@ Support executive planning, capacity budgeting, and revenue goal tracking for ca
 | **Forecast 2024 Sales** | `$14,843,698.91 ($14.84M)` | `[Forecast Sales]` | Projected 2024 baseline revenue (+15.6% YoY) |
 | **Forecast 2024 Profit** | `$2,749,548.22 ($2.75M)` | `[Forecast Profit]` | Projected 2024 operating profit |
 | **Forecast 2024 Orders** | `201,010 orders` | `[Forecast Orders]` | Projected transaction volume |
-| **Expected Margin %** | `18.52%` | `[Forecast Margin]` | Projected operating margin (expanding to 20.1% in Q4) |
-| **Forecast Return Rate** | `3.27%` | `[Forecast Return Rate (weighted)]` | Budgeted return rate assumption |
+| **Expected Margin %** | `18.52%` | `[Forecast Margin]` | Projected operating margin (expanding to 18.9% in Q4) |
+| **Forecast Return Rate** | `2.80%` | `[Forecast Return Rate (weighted)]` | Budgeted return rate assumption |
 
 ---
 
@@ -44,7 +44,7 @@ The following visual specifications define the exact layout, chart types, data f
 | Visual Title | Power BI Visual Type | Axis / Rows / Legend | Values / Bound Measures | Interactions & Notes |
 |---|---|---|---|---|
 | **Forecast KPI cards** | Cards | `Forecast period` | `[Forecast Sales], [Forecast Orders], [Forecast Profit], [Forecast Margin]` | 2024 only |
-| **Forecast sales with bounds** | Line and shaded band | `fact_forecast_2024[Forecast_Month]` | `[Forecast Sales], [Forecast Sales Lower 95], [Forecast Sales Upper 95]` | Intervals are synthetic, not model-validated |
+| **Forecast sales with bounds** | Line and shaded band | `fact_forecast_2024[Forecast_Month]` | `[Forecast Sales], [Forecast Sales Lower 95], [Forecast Sales Upper 95]` | Illustrative ±12% planning scenario bounds |
 | **Forecast orders** | Column | `fact_forecast_2024[Forecast_Month]` | `[Forecast Orders]` | Monthly projections |
 | **Forecast profit and margin** | Combo | `fact_forecast_2024[Forecast_Month]` | `[Forecast Profit], [Forecast Margin]` | Use weighted margin |
 | **Category forecast** | Bar | `Product_Category (NOT IN FORECAST CSV)` | `Forecast sales by category` | Needs forecast allocation table; do not infer |
@@ -98,8 +98,8 @@ The following verified DAX measures from [`dax/measures/`](../../dax/measures/) 
 
 ## 11. Expected Analytical Insights
 - 2024 projection reflects steady top-line growth to $14.84M, driven by retail channel expansion and customer retention.
-- Q4 holiday seasonality represents the peak operating period, generating over $2.98M in combined November-December sales.
-- Profit margin expands from 18.0% in Q1 to 20.1% in December due to operational efficiencies.
+- Q4 holiday seasonality represents the peak operating period, generating over $2.82M in combined November-December sales.
+- Profit margin expands from 18.1% in Q1 to 18.9% in December due to operational efficiencies.
 
 ---
 

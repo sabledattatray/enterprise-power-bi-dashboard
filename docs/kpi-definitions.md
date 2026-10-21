@@ -1,10 +1,20 @@
 # Business KPI Definitions & Calculation Logic
 
-This document specifies the business definitions, mathematical formulas, DAX implementations, and reconciled benchmarks for all Key Performance Indicators (KPIs) in the portfolio.
+This document specifies the business definitions, mathematical formulas, DAX implementations, financial classifications, and reconciled benchmarks for all Key Performance Indicators (KPIs) in the portfolio.
 
 ---
 
-## Core Financial & Operational KPIs
+## 1. Financial Classification & Cost Semantics
+
+To preserve strict accounting accuracy and avoid ambiguity:
+- **Gross Sales Revenue:** The gross transactional dollar value paid by customers across all 178,200 orders.
+- **Cost of Goods Sold (COGS):** Represents **Direct Merchandise Cost** stored per line item in `fact_orders_2023[Cost_Amount_USD]`.
+- **Operating Profit / Gross Margin:** Represents **Gross Operating Profit** (`Sales - COGS`) before corporate overhead (SG&A, facilities, executive payroll, and income tax).
+- **Return Financials:** Refund liability (`$213,726.90`) represents cash/credit returned to customers during reverse logistics. It is tracked as a separate operational ledger in `fact_returns_2023` and is not retroactively deducted from gross transactional order revenue.
+
+---
+
+## 2. Core Financial & Operational KPIs
 
 ### 1. Total Sales Revenue
 - **Business Definition:** Gross dollar value generated from all completed retail orders in 2023 before deductions.
@@ -18,15 +28,15 @@ This document specifies the business definitions, mathematical formulas, DAX imp
 - **Reconciled Value:** **$10,529,660.00**
 - **Format:** Currency (`$#,##0.00`)
 
-### 3. Total Operating Profit
-- **Business Definition:** Operating profit remaining after deducting direct merchandise costs from gross sales.
-- **DAX Formula:** `SUM(fact_orders_2023[Profit_Amount_USD])`
+### 3. Gross Operating Profit
+- **Business Definition:** Direct commercial profit remaining after deducting direct merchandise costs from gross sales (`Gross Sales - COGS`).
+- **DAX Formula:** `SUM(fact_orders_2023[Profit_Amount_USD])` or `[Total Sales] - [Total Cost]`
 - **Reconciled Value:** **$2,310,910.00**
 - **Reconciliation Check:** `$12,840,570.00 - $10,529,660.00 = $2,310,910.00` (Exact match)
 - **Format:** Currency (`$#,##0.00`)
 
 ### 4. Profit Margin %
-- **Business Definition:** Proportion of sales revenue converted into operating profit.
+- **Business Definition:** Proportion of sales revenue converted into gross operating profit.
 - **DAX Formula:** `DIVIDE([Total Profit], [Total Sales], 0)`
 - **Reconciled Value:** **17.997%** (~18.0%)
 - **Format:** Percentage (`0.0%`)
@@ -56,7 +66,7 @@ This document specifies the business definitions, mathematical formulas, DAX imp
 - **Format:** Whole Number (`#,##0`)
 
 ### 9. Return Rate %
-- **Business Definition:** Percentage of orders that resulted in a product return.
+- **Business Definition:** Percentage of placed orders that resulted in a product return.
 - **DAX Formula:** `DIVIDE([Total Returns], [Total Orders], 0)`
 - **Reconciled Value:** **3.255%** (`5,800 / 178,200`)
 - **Format:** Percentage (`0.0%`)
@@ -70,11 +80,24 @@ This document specifies the business definitions, mathematical formulas, DAX imp
 ### 11. Average Delivery Duration
 - **Business Definition:** Mean elapsed time in calendar days between order placement and customer delivery.
 - **DAX Formula:** `AVERAGE(fact_orders_2023[Delivery_Days])`
-- **Reconciled Value:** **2.95 days**
+- **Reconciled Value:** **2.95 days** (evaluated over the 168,200 delivered and returned orders with completed transit)
 - **Format:** Decimal (`0.0 days`)
 
 ### 12. On-Time Delivery %
-- **Business Definition:** Percentage of delivered orders fulfilled within the promised delivery window.
+- **Business Definition:** Percentage of orders fulfilled within the carrier SLA window.
 - **DAX Formula:** `DIVIDE(CALCULATE(COUNTROWS(fact_orders_2023), fact_orders_2023[On_Time_Delivery] = "Yes"), [Total Orders], 0)`
 - **Reconciled Value:** **84.9%** (151,292 on-time orders)
 - **Format:** Percentage (`0.0%`)
+
+---
+
+## 3. Analytical Comparison Classification
+
+To prevent unsupported year-over-year claims and clarify analytical boundaries, all metrics are categorized into four structural tiers:
+
+| Tier | Comparison Type | Supported By Source Data? | Implementation Status & Interpretation |
+|---|---|:---:|---|
+| **Tier 1** | **Actual vs. Actual** (Intra-2023) | **YES** | **Fully Supported:** Includes Month-over-Month (`[Sales MoM %]`), Quarter-to-Date (`[Sales QTD]`), Year-to-Date (`[Sales YTD]`), and Rolling 3 Months (`[Rolling 3M Sales]`). Evaluates strictly within 2023 actuals. |
+| **Tier 2** | **Actual vs. Forecast** | **YES** | **Fully Supported:** Compares full-year 2023 actual sales ($12.84M) against full-year 2024 baseline forecast ($14.84M), representing a **+15.6%** growth target. |
+| **Tier 3** | **Forecast Scenario Comparison** | **YES** | **Fully Supported:** Compares the 2024 baseline forecast against the illustrative conservative bound (-12%, $13.06M) and optimistic bound (+12%, $16.62M) for budgeting sensitivity analysis. |
+| **Tier 4** | **Prior Year Historical (YoY)** | *Requires 2022 Data* | **DAX Pre-Authored:** Measures like `[Sales PY]`, `[Sales YoY %]`, `[Profit PY]`, and `[Orders PY]` are written using `SAMEPERIODLASTYEAR(DimDate[Date])`. In this single-year baseline (2023), they safely evaluate to `BLANK()`. Ingesting 2022 historical CSV data will automatically activate these comparisons without code changes. |
