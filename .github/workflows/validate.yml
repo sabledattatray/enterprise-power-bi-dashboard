@@ -2,10 +2,13 @@ name: Validate Portfolio Assets and Data
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, 'maintenance/**' ]
   pull_request:
     branches: [ main ]
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   validate:
@@ -33,10 +36,25 @@ jobs:
         run: |
           python scripts/validate_assets.py
 
+      - name: Validate markdown documentation links
+        run: |
+          python scripts/validate_links.py
+
       - name: Run automated test suite
         run: |
           python -m unittest discover tests
 
-      - name: Generate validation report
+      - name: Generate live validation report
         run: |
           python scripts/generate_validation_report.py
+
+      - name: Validate release package integrity and checksums
+        run: |
+          python scripts/package_release.py
+
+      - name: Upload validation report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-report
+          path: docs/validation-report.md
+          if-no-files-found: error

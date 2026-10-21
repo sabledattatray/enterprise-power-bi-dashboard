@@ -109,7 +109,7 @@ This document provides the authoritative column-by-column schema specification f
 
 ## 5. `fact_forecast_2024`
 
-**Description:** Monthly projection scenario table establishing 2024 forecast baselines and 95% confidence bounds.  
+**Description:** Monthly projection scenario table establishing 2024 forecast baselines and illustrative planning scenario bounds (conservative -12% / optimistic +12%). Note that legacy column headers containing '_95' represent deterministic managerial scenario planning bounds rather than Gaussian statistical confidence intervals.  
 - **Total Records:** 12  
 - **Primary Key:** `Forecast_Month (Composite / Temporal Key)`  
 - **Foreign Keys:** `Forecast_Month -> DimDate[Date] (Connected via Calendar dimension)`  

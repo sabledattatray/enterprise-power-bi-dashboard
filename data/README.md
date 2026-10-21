@@ -20,7 +20,7 @@ This directory contains the synthetic relational business dataset used throughou
 | Customers | [`raw/dim_customers.csv`](raw/dim_customers.csv) | 2.7 MB | 46,798 | 6 | Customer master, demographics, segments, acquisition channel |
 | Products | [`raw/dim_products.csv`](raw/dim_products.csv) | 19.6 KB | 320 | 6 | Product catalog, hierarchy, categories, brands, list price |
 | Returns | [`raw/fact_returns_2023.csv`](raw/fact_returns_2023.csv) | 394 KB | 5,800 | 7 | Return records, reasons, resolutions, refund amounts |
-| Forecast | [`raw/fact_forecast_2024.csv`](raw/fact_forecast_2024.csv) | 1.5 KB | 12 | 11 | 2024 monthly scenario projections and 95% confidence intervals |
+| Forecast | [`raw/fact_forecast_2024.csv`](raw/fact_forecast_2024.csv) | 1.5 KB | 12 | 11 | 2024 monthly scenario projections & illustrative ±12% planning bounds |
 | **Total** | | **~32.8 MB** | **231,130** | **49** | |
 
 ---
